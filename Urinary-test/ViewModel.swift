@@ -35,6 +35,6 @@ extension ContentViewModel{
         self.title = ""
         self.body = ""
     }//func clear
-    //Userがtitleもしくはbodyを空にした時に空を返すために作成。
+    //Userがtitleもしくはbodyを空にしたい時に空を返すために作成。
     
 }//extension ContentViewModel

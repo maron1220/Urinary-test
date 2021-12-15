@@ -29,3 +29,30 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+extension ContentView{
+    private func form() -> some View{
+        Form{
+            TextField("Title",text: $contentViewModel.title)
+            Text("Body").font(.headline)
+            
+            TextEditor(text: $contentViewModel.body)
+                .frame( height:100)
+            
+            //TextFieldとTextEditerの内容をBinding($)でViewModelに渡す。
+        }//Form
+        .frame(height:270)
+        .padding(4)
+    }//private func form
+}//extension ContentView
+//入力されたデータの一時保存場所。
+
+extension ContentView{
+    private func buttons() -> some View{
+        HStack(spacing:50){
+            NavigationLink(){
+                
+            }//NavigationLink
+        }//HStack
+    }//private func buttons
+}//extension ContentView
