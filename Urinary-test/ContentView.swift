@@ -50,8 +50,13 @@ extension ContentView{
 extension ContentView{
     private func buttons() -> some View{
         HStack(spacing:50){
-            NavigationLink(){
-                
+            NavigationLink(destination: PdfPreviewView()){
+                Text("Create")
+                    .padding(10)
+                    .frame(width:100)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
             }//NavigationLink
         }//HStack
     }//private func buttons
