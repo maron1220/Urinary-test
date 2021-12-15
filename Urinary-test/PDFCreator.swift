@@ -14,9 +14,10 @@ class PDFCreator: NSObject {
     private var renderer:UIGraphicsPDFRenderer?
     
     init(pageRect:CGRect = CGRect(x:0,y:0,width:(8.5*72.0),height:(11*72.0))) {
+        //width:(8.5*72.0),height:(11*72.0)はA4ペーパーサイズ
          
         let format = UIGraphicsPDFRendererFormat()
-        let metData = [kCGPDFContextTitle:"It's a PDF!",kCGPDFContextAuthor:"TechChee"]
+        let metData = [kCGPDFContextTitle:"It's a PDF!",kCGPDFContextAuthor:"Tapimari"]
         
         format.documentInfo = metData as [String:Any]
         self.pageReact = pageRect
