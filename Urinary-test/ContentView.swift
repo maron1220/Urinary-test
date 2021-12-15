@@ -19,7 +19,7 @@ struct ContentView: View {
                 buttons()
                 Spacer()
             }//VStack
-            .navigationTitle(Text("PDF Composer"))
+            .navigationTitle(Text("Urinary Test"))
         }//NavigationView
     }//var body
 }//strunc ContentView

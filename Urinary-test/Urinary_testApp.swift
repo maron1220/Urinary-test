@@ -12,6 +12,7 @@ struct Urinary_testApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ContentViewModel())
         }
     }
 }
