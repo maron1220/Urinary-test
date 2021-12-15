@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D5F47DF2761028F00590DAD /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F47DE2761028F00590DAD /* PDFCreator.swift */; };
+		2DC2D732275FC52C0051824E /* Urinary_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2D731275FC52C0051824E /* Urinary_testApp.swift */; };
+		2DC2D734275FC52C0051824E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2D733275FC52C0051824E /* ContentView.swift */; };
+		2DC2D736275FC52D0051824E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2D735275FC52D0051824E /* Assets.xcassets */; };
+		2DC2D739275FC52D0051824E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC2D738275FC52D0051824E /* Preview Assets.xcassets */; };
+		2DC2D743275FC52E0051824E /* Urinary_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2D742275FC52E0051824E /* Urinary_testTests.swift */; };
+		2DC2D74D275FC52E0051824E /* Urinary_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2D74C275FC52E0051824E /* Urinary_testUITests.swift */; };
+		2DC2D74F275FC52E0051824E /* Urinary_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC2D74E275FC52E0051824E /* Urinary_testUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2DC2D73F275FC52E0051824E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DC2D726275FC52C0051824E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DC2D72D275FC52C0051824E;
+			remoteInfo = "Urinary-test";
+		};
+		2DC2D749275FC52E0051824E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DC2D726275FC52C0051824E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DC2D72D275FC52C0051824E;
+			remoteInfo = "Urinary-test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2D5F47DE2761028F00590DAD /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		2DC2D72E275FC52C0051824E /* Urinary-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Urinary-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC2D731275FC52C0051824E /* Urinary_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urinary_testApp.swift; sourceTree = "<group>"; };
+		2DC2D733275FC52C0051824E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2DC2D735275FC52D0051824E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2DC2D738275FC52D0051824E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2DC2D73E275FC52E0051824E /* Urinary-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Urinary-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC2D742275FC52E0051824E /* Urinary_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urinary_testTests.swift; sourceTree = "<group>"; };
+		2DC2D748275FC52E0051824E /* Urinary-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Urinary-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DC2D74C275FC52E0051824E /* Urinary_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urinary_testUITests.swift; sourceTree = "<group>"; };
+		2DC2D74E275FC52E0051824E /* Urinary_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urinary_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DC2D72B275FC52C0051824E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC2D73B275FC52E0051824E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC2D745275FC52E0051824E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2DC2D725275FC52C0051824E = {
+			isa = PBXGroup;
+			children = (
+				2DC2D730275FC52C0051824E /* Urinary-test */,
+				2DC2D741275FC52E0051824E /* Urinary-testTests */,
+				2DC2D74B275FC52E0051824E /* Urinary-testUITests */,
+				2DC2D72F275FC52C0051824E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2DC2D72F275FC52C0051824E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DC2D72E275FC52C0051824E /* Urinary-test.app */,
+				2DC2D73E275FC52E0051824E /* Urinary-testTests.xctest */,
+				2DC2D748275FC52E0051824E /* Urinary-testUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DC2D730275FC52C0051824E /* Urinary-test */ = {
+			isa = PBXGroup;
+			children = (
+				2DC2D731275FC52C0051824E /* Urinary_testApp.swift */,
+				2DC2D733275FC52C0051824E /* ContentView.swift */,
+				2D5F47DE2761028F00590DAD /* PDFCreator.swift */,
+				2DC2D735275FC52D0051824E /* Assets.xcassets */,
+				2DC2D737275FC52D0051824E /* Preview Content */,
+			);
+			path = "Urinary-test";
+			sourceTree = "<group>";
+		};
+		2DC2D737275FC52D0051824E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2DC2D738275FC52D0051824E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2DC2D741275FC52E0051824E /* Urinary-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				2DC2D742275FC52E0051824E /* Urinary_testTests.swift */,
+			);
+			path = "Urinary-testTests";
+			sourceTree = "<group>";
+		};
+		2DC2D74B275FC52E0051824E /* Urinary-testUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2DC2D74C275FC52E0051824E /* Urinary_testUITests.swift */,
+				2DC2D74E275FC52E0051824E /* Urinary_testUITestsLaunchTests.swift */,
+			);
+			path = "Urinary-testUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DC2D72D275FC52C0051824E /* Urinary-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DC2D752275FC52E0051824E /* Build configuration list for PBXNativeTarget "Urinary-test" */;
+			buildPhases = (
+				2DC2D72A275FC52C0051824E /* Sources */,
+				2DC2D72B275FC52C0051824E /* Frameworks */,
+				2DC2D72C275FC52C0051824E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Urinary-test";
+			productName = "Urinary-test";
+			productReference = 2DC2D72E275FC52C0051824E /* Urinary-test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2DC2D73D275FC52E0051824E /* Urinary-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DC2D755275FC52E0051824E /* Build configuration list for PBXNativeTarget "Urinary-testTests" */;
+			buildPhases = (
+				2DC2D73A275FC52E0051824E /* Sources */,
+				2DC2D73B275FC52E0051824E /* Frameworks */,
+				2DC2D73C275FC52E0051824E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DC2D740275FC52E0051824E /* PBXTargetDependency */,
+			);
+			name = "Urinary-testTests";
+			productName = "Urinary-testTests";
+			productReference = 2DC2D73E275FC52E0051824E /* Urinary-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2DC2D747275FC52E0051824E /* Urinary-testUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DC2D758275FC52E0051824E /* Build configuration list for PBXNativeTarget "Urinary-testUITests" */;
+			buildPhases = (
+				2DC2D744275FC52E0051824E /* Sources */,
+				2DC2D745275FC52E0051824E /* Frameworks */,
+				2DC2D746275FC52E0051824E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DC2D74A275FC52E0051824E /* PBXTargetDependency */,
+			);
+			name = "Urinary-testUITests";
+			productName = "Urinary-testUITests";
+			productReference = 2DC2D748275FC52E0051824E /* Urinary-testUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DC2D726275FC52C0051824E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					2DC2D72D275FC52C0051824E = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					2DC2D73D275FC52E0051824E = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 2DC2D72D275FC52C0051824E;
+					};
+					2DC2D747275FC52E0051824E = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 2DC2D72D275FC52C0051824E;
+					};
+				};
+			};
+			buildConfigurationList = 2DC2D729275FC52C0051824E /* Build configuration list for PBXProject "Urinary-test" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2DC2D725275FC52C0051824E;
+			productRefGroup = 2DC2D72F275FC52C0051824E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2DC2D72D275FC52C0051824E /* Urinary-test */,
+				2DC2D73D275FC52E0051824E /* Urinary-testTests */,
+				2DC2D747275FC52E0051824E /* Urinary-testUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DC2D72C275FC52C0051824E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC2D739275FC52D0051824E /* Preview Assets.xcassets in Resources */,
+				2DC2D736275FC52D0051824E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC2D73C275FC52E0051824E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC2D746275FC52E0051824E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DC2D72A275FC52C0051824E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC2D734275FC52C0051824E /* ContentView.swift in Sources */,
+				2D5F47DF2761028F00590DAD /* PDFCreator.swift in Sources */,
+				2DC2D732275FC52C0051824E /* Urinary_testApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC2D73A275FC52E0051824E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC2D743275FC52E0051824E /* Urinary_testTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DC2D744275FC52E0051824E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DC2D74D275FC52E0051824E /* Urinary_testUITests.swift in Sources */,
+				2DC2D74F275FC52E0051824E /* Urinary_testUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2DC2D740275FC52E0051824E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DC2D72D275FC52C0051824E /* Urinary-test */;
+			targetProxy = 2DC2D73F275FC52E0051824E /* PBXContainerItemProxy */;
+		};
+		2DC2D74A275FC52E0051824E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DC2D72D275FC52C0051824E /* Urinary-test */;
+			targetProxy = 2DC2D749275FC52E0051824E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2DC2D750275FC52E0051824E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2DC2D751275FC52E0051824E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2DC2D753275FC52E0051824E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Urinary-test/Preview Content\"";
+				DEVELOPMENT_TEAM = BJV8368N2T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.ocr.Urinary-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2DC2D754275FC52E0051824E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Urinary-test/Preview Content\"";
+				DEVELOPMENT_TEAM = BJV8368N2T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.ocr.Urinary-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2DC2D756275FC52E0051824E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJV8368N2T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.ocr.Urinary-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Urinary-test.app/Urinary-test";
+			};
+			name = Debug;
+		};
+		2DC2D757275FC52E0051824E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJV8368N2T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.ocr.Urinary-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Urinary-test.app/Urinary-test";
+			};
+			name = Release;
+		};
+		2DC2D759275FC52E0051824E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJV8368N2T;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.ocr.Urinary-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Urinary-test";
+			};
+			name = Debug;
+		};
+		2DC2D75A275FC52E0051824E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BJV8368N2T;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.ocr.Urinary-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Urinary-test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DC2D729275FC52C0051824E /* Build configuration list for PBXProject "Urinary-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC2D750275FC52E0051824E /* Debug */,
+				2DC2D751275FC52E0051824E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DC2D752275FC52E0051824E /* Build configuration list for PBXNativeTarget "Urinary-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC2D753275FC52E0051824E /* Debug */,
+				2DC2D754275FC52E0051824E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DC2D755275FC52E0051824E /* Build configuration list for PBXNativeTarget "Urinary-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC2D756275FC52E0051824E /* Debug */,
+				2DC2D757275FC52E0051824E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DC2D758275FC52E0051824E /* Build configuration list for PBXNativeTarget "Urinary-testUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DC2D759275FC52E0051824E /* Debug */,
+				2DC2D75A275FC52E0051824E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2DC2D726275FC52C0051824E /* Project object */;
+}
