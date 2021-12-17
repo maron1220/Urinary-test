@@ -15,8 +15,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             VStack{
-                form()
+                usgform()
                 buttons()
+                form()
                 Spacer()
             }//VStack
             .navigationTitle(Text("Urinary Test"))
@@ -29,6 +30,21 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+extension ContentView{
+    private func usgform() -> some View{
+        Form{
+            Section{
+                TextField("USG",text: $contentViewModel.usgvalue)
+                    .keyboardType(.decimalPad)
+            }header: {
+                Text("Urinary Specific Gravity")
+            }
+        }//Form
+        .frame(height:270)
+        .padding(4)
+    }//private func usgform
+}//extension ContentView
 
 extension ContentView{
     private func form() -> some View{
