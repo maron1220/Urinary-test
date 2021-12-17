@@ -12,16 +12,31 @@ struct ContentView: View {
     @EnvironmentObject private var contentViewModel:ContentViewModel
     //EnvironmentObject=複数のViewでObservableObjectを使う。
     
+    @State private var selection = 0
+    let selections = [
+        "'Colorless' or 'Light yellow'",
+        "'Dark yellow' or 'Yellow-orange'",
+        "'Yellow-green' or 'Yellow-brown'",
+        "'Brown' to 'Black'",
+        "'Red' to 'Red-brown'",
+        "'Pink' to 'Brown'",
+        "Orange-red",
+        "Blue-green",
+        "Milky white"
+    ]
+    
     var body: some View {
         NavigationView{
             VStack{
                 usgform()
-                buttons()
-                form()
+                colorspicker()
                 Spacer()
+//                buttons()
+//                form()
             }//VStack
             .navigationTitle(Text("Urinary Test"))
         }//NavigationView
+        .environmentObject(contentViewModel)
     }//var body
 }//strunc ContentView
 
@@ -33,16 +48,15 @@ struct ContentView_Previews: PreviewProvider {
 
 extension ContentView{
     private func usgform() -> some View{
-        Form{
             Section{
                 TextField("USG",text: $contentViewModel.usgvalue)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .multilineTextAlignment(.center)
                     .keyboardType(.decimalPad)
             }header: {
-                Text("Urinary Specific Gravity")
+                Text("Input:「Urinary Specific Gravity」")
+                    .foregroundColor(.gray)
             }
-        }//Form
-        .frame(height:270)
-        .padding(4)
     }//private func usgform
 }//extension ContentView
 
@@ -53,7 +67,7 @@ extension ContentView{
             Text("Body").font(.headline)
             
             TextEditor(text: $contentViewModel.body)
-                .frame( height:100)
+                .frame(height:100)
             
             //TextFieldとTextEditerの内容をBinding($)でViewModelに渡す。
         }//Form
@@ -74,6 +88,25 @@ extension ContentView{
                     .foregroundColor(.white)
                     .cornerRadius(20)
             }//NavigationLink
+            .environmentObject(contentViewModel)
         }//HStack
     }//private func buttons
+}//extension ContentView
+
+extension ContentView{
+    private func colorspicker() -> some View{
+        VStack{
+        Section{
+                Picker(selection: $selection,label: Text("Urine Color")){
+                ForEach(0..<selections.count){index in
+                    Text(self.selections[index])
+            }//ForEach
+            }//Picker
+        }header: {
+            Text("Choose:「Urine Color」")
+                .foregroundColor(.gray)
+        }
+        Text("Urine color : \(selections[selection])")
+        }//VStack
+    }//private func colors
 }//extension ContentView

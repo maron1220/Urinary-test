@@ -7,9 +7,11 @@
 
 import UIKit
 import PDFKit
+import SwiftUI
 
 class PDFCreator: NSObject {
-    
+    @EnvironmentObject private var contentViewModel:ContentViewModel
+   
     private var pageReact:CGRect
     private var renderer:UIGraphicsPDFRenderer?
     
@@ -25,19 +27,52 @@ class PDFCreator: NSObject {
         
         super.init()
     }
-
+    
 }
+
+
 
 extension PDFCreator{
     
     private func addUsgValue(usgvalue : String){
+        
+        var usgcolor = UIColor.black
+        
+        var doubleusg:Double
+        if let convertusg = Double(usgvalue){
+            doubleusg = Double(usgvalue)!
+        }else{
+            doubleusg = 0.0
+        }
+        
+        switch doubleusg {
+        case 0..<1.007 :
+            usgcolor = UIColor.blue
+        case 1.007...1.012 :
+            usgcolor = UIColor.cyan
+        case let d where d>1.012 && d<=1.030 :
+            usgcolor = UIColor.gray
+        default:
+            usgcolor = UIColor.black
+        }
+
         let usgRect = CGRect(x: 20, y: 0, width: pageReact.width - 40, height: 40)
-        usgvalue.draw(in:usgRect,withAttributes:[NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30)])
+        var usgattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:usgcolor
+        ]
+        usgvalue.draw(in:usgRect,withAttributes:usgattributes)
     }//private func addUsgData
     
     private func addTitle(title : String){
         let textRect = CGRect(x:20,y:50,width: pageReact.width - 40 ,height: 40)
-        title.draw(in:textRect,withAttributes:[NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30)])
+        
+        let attributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        title.draw(in:textRect,withAttributes:attributes)
     }//addTitle
     
     private func addBody(body:String){

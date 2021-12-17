@@ -27,7 +27,9 @@ struct PdfPreviewView:View{
                 //contentViewModelからデータをもらう
                 ShareView(activityItems: [data])
             }
-        })
+        }//content
+        )//.sheet
+        .environmentObject(contentViewModel)
     }//var body
     
 }//PdfPreviewView

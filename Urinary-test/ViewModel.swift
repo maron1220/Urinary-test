@@ -35,7 +35,7 @@ class ContentViewModel : ObservableObject{
 
 extension ContentViewModel{
     func pdfData() -> Data?{
-        return PDFCreator().pdfData(title: self.title, body: self.body,usgvalue:"USG:\(self.usgvalue)")
+        return PDFCreator().pdfData(title: self.title, body: self.body,usgvalue:self.usgvalue)
     }//func pdfData
     
     func clear(){
