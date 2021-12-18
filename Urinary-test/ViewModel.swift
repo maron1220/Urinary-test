@@ -31,17 +31,26 @@ class ContentViewModel : ObservableObject{
             content.usgvalue = newusgvalue
         }//set(newusgvalue)
     }//var usgvalue
+    
+    var urinecolor : String{
+        get{content.urinecolor}
+        set(newurinecolor){
+            content.urinecolor = newurinecolor
+        }//set(newurinecolor)
+    }//var urinecolor
+    
 }//class ContentViewModel
 
 extension ContentViewModel{
     func pdfData() -> Data?{
-        return PDFCreator().pdfData(title: self.title, body: self.body,usgvalue:self.usgvalue)
+        return PDFCreator().pdfData(title: self.title, body: self.body,usgvalue:self.usgvalue,urinecolor:self.urinecolor)
     }//func pdfData
     
     func clear(){
         self.title = ""
         self.body = ""
         self.usgvalue = ""
+        self.urinecolor = ""
     }//func clear
     //Userがtitleもしくはbodyを空にしたい時に空を返すために作成。
     

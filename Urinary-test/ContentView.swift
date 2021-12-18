@@ -30,8 +30,9 @@ struct ContentView: View {
             VStack{
                 usgform()
                 colorspicker()
+                pickerbutton()
                 Spacer()
-//                buttons()
+                buttons()
 //                form()
             }//VStack
             .navigationTitle(Text("Urinary Test"))
@@ -95,7 +96,6 @@ extension ContentView{
 
 extension ContentView{
     private func colorspicker() -> some View{
-        VStack{
         Section{
                 Picker(selection: $selection,label: Text("Urine Color")){
                 ForEach(0..<selections.count){index in
@@ -106,7 +106,15 @@ extension ContentView{
             Text("Choose:「Urine Color」")
                 .foregroundColor(.gray)
         }
-        Text("Urine color : \(selections[selection])")
-        }//VStack
     }//private func colors
 }//extension ContentView
+
+extension ContentView{
+    private func pickerbutton() -> some View{
+        Button(action:{
+            contentViewModel.urinecolor = selections[selection]
+        }){
+            Text("Picker Register")
+        }
+    }
+}//ContentView
