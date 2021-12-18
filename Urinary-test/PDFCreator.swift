@@ -84,6 +84,72 @@ extension PDFCreator{
         ]
         
         urovalue.draw(in:urovalueRect,withAttributes:urovalueattributes)
+    }//addUrovalue
+    
+    private func addObValue(obvalue:String){
+        let obvalueRect = CGRect(x:20,y:130,width:pageReact.width - 40,height: 40)
+        
+        let obvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        obvalue.draw(in:obvalueRect,withAttributes:obvalueattributes)
+    }//addObvalue
+    
+    private func addBilValue(bilvalue:String){
+        let bilvalueRect = CGRect(x:20,y:170,width:pageReact.width - 40,height: 40)
+        
+        let bilvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        bilvalue.draw(in:bilvalueRect,withAttributes:bilvalueattributes)
+    }//addBilvalueColor
+    
+    private func addKetonValue(ketonvalue:String){
+        let ketonvalueRect = CGRect(x:20,y:210,width:pageReact.width - 40,height: 40)
+        
+        let ketonvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        ketonvalue.draw(in:ketonvalueRect,withAttributes:ketonvalueattributes)
+    }//addKetonvalueColor
+    
+    private func addGluValue(gluvalue:String){
+        let gluvalueRect = CGRect(x:20,y:250,width:pageReact.width - 40,height: 40)
+        
+        let gluvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        gluvalue.draw(in:gluvalueRect,withAttributes:gluvalueattributes)
+    }//addGluvalueColor
+    
+    private func addTpValue(tpvalue:String){
+        let tpvalueRect = CGRect(x:20,y:290,width:pageReact.width - 40,height: 40)
+        
+        let tpvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        tpvalue.draw(in:tpvalueRect,withAttributes:tpvalueattributes)
+    }//addUrovalueColor
+    
+    private func addPhValue(phvalue:String){
+        let phvalueRect = CGRect(x:20,y:330,width:pageReact.width - 40,height: 40)
+        
+        let phvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        phvalue.draw(in:phvalueRect,withAttributes:phvalueattributes)
     }//addUrovalueColor
     
     private func addTitle(title : String){
@@ -115,13 +181,19 @@ extension PDFCreator{
 }//extension PDFCreator
 
 extension PDFCreator{
-    func pdfData(title:String,body:String,usgvalue:String,urinecolor:String,urovalue:String) -> Data?{
+    func pdfData(title:String,body:String,usgvalue:String,urinecolor:String,urovalue:String,obvalue:String,bilvalue:String,ketonvalue:String,gluvalue:String,tpvalue:String,phvalue:String) -> Data?{
         if let renderer = self.renderer{
             let data = renderer.pdfData{ ctx in
                 ctx.beginPage()
                 addUsgValue(usgvalue: usgvalue)
                 addUrineColor(urinecolor: urinecolor)
                 addUroValue(urovalue: urovalue)
+                addObValue(obvalue: obvalue)
+                addBilValue(bilvalue: bilvalue)
+                addKetonValue(ketonvalue: ketonvalue)
+                addGluValue(gluvalue: gluvalue)
+                addTpValue(tpvalue: tpvalue)
+                addPhValue(phvalue: phvalue)
                 addTitle(title: title)
                 addBody(body: body)
             }

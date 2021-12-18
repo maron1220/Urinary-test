@@ -185,6 +185,12 @@ extension ContentView{
         Button(action:{
             contentViewModel.urinecolor = selections[selection]
             contentViewModel.urovalue = uroarray[uroselection]
+            contentViewModel.obvalue = obarray[obselection]
+            contentViewModel.bilvalue = bilarray[bilselection]
+            contentViewModel.ketonvalue = ketonarray[ketonselection]
+            contentViewModel.gluvalue = gluarray[gluselection]
+            contentViewModel.tpvalue = tparray[tpselection]
+            contentViewModel.phvalue = pharray[phselection]
         }){
             Text("Picker Register")
                 .padding(10)
