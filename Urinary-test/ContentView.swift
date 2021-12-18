@@ -41,11 +41,7 @@ struct ContentView: View {
     }//var body
 }//strunc ContentView
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+
 
 extension ContentView{
     private func usgform() -> some View{
@@ -54,6 +50,7 @@ extension ContentView{
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .multilineTextAlignment(.center)
                     .keyboardType(.decimalPad)
+                    .frame(width: 300, height: 50)
             }header: {
                 Text("Input:「Urinary Specific Gravity」")
                     .foregroundColor(.gray)
@@ -100,8 +97,11 @@ extension ContentView{
                 Picker(selection: $selection,label: Text("Urine Color")){
                 ForEach(0..<selections.count){index in
                     Text(self.selections[index])
+                        
             }//ForEach
             }//Picker
+                .frame(width: 300, height: 50)
+                .border(Color.gray)
         }header: {
             Text("Choose:「Urine Color」")
                 .foregroundColor(.gray)
@@ -115,6 +115,18 @@ extension ContentView{
             contentViewModel.urinecolor = selections[selection]
         }){
             Text("Picker Register")
-        }
+                .padding(10)
+                .frame(width:100)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(20)
+        }//Button
+    }//func pickerbutton
+}//extension ContentView
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
-}//ContentView
+}
