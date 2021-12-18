@@ -7,9 +7,11 @@
 
 import UIKit
 import PDFKit
+import SwiftUI
 
 class PDFCreator: NSObject {
-    
+    @EnvironmentObject private var contentViewModel:ContentViewModel
+   
     private var pageReact:CGRect
     private var renderer:UIGraphicsPDFRenderer?
     
@@ -25,14 +27,64 @@ class PDFCreator: NSObject {
         
         super.init()
     }
-
+    
 }
 
+
+
 extension PDFCreator{
+    
+    private func addUsgValue(usgvalue : String){
+        
+        var usgcolor = UIColor.black
+        
+        var doubleusg:Double
+        if let convertusg = Double(usgvalue){
+            doubleusg = Double(usgvalue)!
+        }else{
+            doubleusg = 0.0
+        }
+        
+        switch doubleusg {
+        case 0..<1.007 :
+            usgcolor = UIColor.blue
+        case 1.007...1.012 :
+            usgcolor = UIColor.cyan
+        case let d where d>1.012 && d<=1.030 :
+            usgcolor = UIColor.gray
+        default:
+            usgcolor = UIColor.black
+        }
+
+        let usgRect = CGRect(x: 20, y: 0, width: pageReact.width - 40, height: 40)
+        var usgattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:usgcolor
+        ]
+        usgvalue.draw(in:usgRect,withAttributes:usgattributes)
+    }//private func addUsgData
+    
+    private func addUrineColor(urinecolor:String){
+        let urinecolorRect = CGRect(x:20,y:50,width:pageReact.width - 40,height: 40)
+        
+        let urinecolorattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        urinecolor.draw(in:urinecolorRect,withAttributes:urinecolorattributes)
+    }//addUrineColor
+    
     private func addTitle(title : String){
-        let textRect = CGRect(x:20,y:20,width: pageReact.width - 40 ,height: 40)
-        title.draw(in:textRect,withAttributes:[NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30)])
-    }//assTitle
+        let textRect = CGRect(x:20,y:50,width: pageReact.width - 40 ,height: 40)
+        
+        let attributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        title.draw(in:textRect,withAttributes:attributes)
+    }//addTitle
     
     private func addBody(body:String){
         let paragraphStyle = NSMutableParagraphStyle()
@@ -44,16 +96,18 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let bodyRect = CGRect(x: 20, y: 70, width: pageReact.width - 40, height: pageReact.height - 80)
+        let bodyRect = CGRect(x: 20, y: 100, width: pageReact.width - 40, height: pageReact.height - 80)
         body.draw(in:bodyRect,withAttributes:attributes)
     }//addBody
 }//extension PDFCreator
 
 extension PDFCreator{
-    func pdfData(title:String,body:String) -> Data?{
+    func pdfData(title:String,body:String,usgvalue:String,urinecolor:String) -> Data?{
         if let renderer = self.renderer{
             let data = renderer.pdfData{ ctx in
                 ctx.beginPage()
+                addUsgValue(usgvalue: usgvalue)
+                addUrineColor(urinecolor: urinecolor)
                 addTitle(title: title)
                 addBody(body: body)
             }

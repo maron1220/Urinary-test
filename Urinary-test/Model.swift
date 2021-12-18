@@ -12,4 +12,6 @@ import Foundation
 struct Content{
     var title : String = ""
     var body : String = ""
+    var usgvalue : String = "0"
+    var urinecolor : String = ""
 }
