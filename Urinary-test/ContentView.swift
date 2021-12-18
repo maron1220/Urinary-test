@@ -12,7 +12,7 @@ struct ContentView: View {
     @EnvironmentObject private var contentViewModel:ContentViewModel
     //EnvironmentObject=複数のViewでObservableObjectを使う。
     @State private var selection = 0 //urinecolor's picker
-    @State private var segmentedselection = 0//segmentedpicker
+    @State private var uroselection = 0//segmentedpicker
     
     let selections = [
         "'Colorless' or 'Light yellow'",
@@ -40,7 +40,7 @@ struct ContentView: View {
                 usgform()
                 colorspicker()
 //                pickerbutton()
-                segmentedpicker(headertext: "Choose:「Uro Value」", pickertext: "Uro", pickerarray: uro)
+                    segmentedpicker(headertext: "Choose:「Uro Value」", pickertext: "Uro", pickerarray: uro, segmentedselection: $uroselection)
                 }
                 Spacer()
 //                buttons()
@@ -133,9 +133,9 @@ extension ContentView{
 }//extension ContentView
 
 extension ContentView{
-    private func segmentedpicker(headertext:String,pickertext:String, pickerarray:[String]) -> some View{
+    private func segmentedpicker(headertext:String,pickertext:String, pickerarray:[String],segmentedselection:Binding<Int>) -> some View{
         Section{
-            Picker(selection:$segmentedselection , label: Text(pickertext)){
+            Picker(selection:segmentedselection , label: Text(pickertext)){
                 ForEach(0..<pickerarray.count){index in
                     Text(pickerarray[index])
                 }
