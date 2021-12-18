@@ -11,8 +11,15 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject private var contentViewModel:ContentViewModel
     //EnvironmentObject=複数のViewでObservableObjectを使う。
+    @State private var selection = 0 //urinecolor's picker
+    @State private var uroselection = 0//segmentedpicker
+    @State private var obselection = 0//segmentedpicker
+    @State private var bilselection = 0//segmentedpicker
+    @State private var ketonselection = 0//segmentedpicker
+    @State private var gluselection = 0//segmentedpicker
+    @State private var tpselection = 0//segmentedpicker
+    @State private var phselection = 0//segmentedpicker
     
-    @State private var selection = 0
     let selections = [
         "'Colorless' or 'Light yellow'",
         "'Dark yellow' or 'Yellow-orange'",
@@ -25,36 +32,103 @@ struct ContentView: View {
         "Milky white"
     ]
     
+    let uroarray = [
+        "Normal",
+        "+",
+        "++",
+        "+++"
+    ]
+    
+    let obarray = [
+        "-",
+        "+",
+        "++",
+        "+++"
+    ]
+    
+    let bilarray = [
+        "-",
+        "+",
+        "++",
+        "+++"
+    ]
+    
+    let ketonarray = [
+        "-",
+        "+",
+        "++",
+        "+++"
+    ]
+    
+    let gluarray = [
+        "-",
+        "+",
+        "++",
+        "+++"
+    ]
+    
+    let tparray = [
+        "-",
+        "+",
+        "++",
+        "+++"
+    ]
+    
+    let pharray = [
+        "5.0",
+        "6.0",
+        "6.5",
+        "7.0",
+        "7.5",
+        "8.0",
+        "8.5"
+    ]
+    
     var body: some View {
         NavigationView{
             VStack{
-                usgform()
-                colorspicker()
+                Form{
+                    usgform()
+                    colorspicker()
+                    
+                    segmentedpicker(headertext: "Choose:「Uro Value」", pickertext: "Uro", pickerarray: uroarray, segmentedselection: $uroselection)
+                    
+                    segmentedpicker(headertext: "Choose:「OB Value」", pickertext: "OB", pickerarray: obarray, segmentedselection: $obselection)
+                    
+                    segmentedpicker(headertext: "Choose:「Bilirubin Value」", pickertext: "Bil", pickerarray: bilarray, segmentedselection: $bilselection)
+                    
+                    segmentedpicker(headertext: "Choose:「Keton Value」", pickertext: "Keton", pickerarray: ketonarray, segmentedselection: $ketonselection)
+                    
+                    segmentedpicker(headertext: "Choose:「Glucose Value」", pickertext: "Glu", pickerarray: gluarray, segmentedselection: $gluselection)
+                    
+                    segmentedpicker(headertext: "Choose:「TP Value」", pickertext: "TP", pickerarray: tparray, segmentedselection: $tpselection)
+                    
+                    segmentedpicker(headertext: "Choose:「pH Value」", pickertext: "pH", pickerarray: pharray, segmentedselection: $phselection)
+                }//Form
                 pickerbutton()
-                Spacer()
                 buttons()
-//                form()
+                //                form()
             }//VStack
             .navigationTitle(Text("Urinary Test"))
         }//NavigationView
-        .environmentObject(contentViewModel)
-    }//var body
+    .environmentObject(contentViewModel)
+}//var body
 }//strunc ContentView
 
 
 
 extension ContentView{
     private func usgform() -> some View{
-            Section{
-                TextField("USG",text: $contentViewModel.usgvalue)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .multilineTextAlignment(.center)
-                    .keyboardType(.decimalPad)
-                    .frame(width: 300, height: 50)
-            }header: {
-                Text("Input:「Urinary Specific Gravity」")
-                    .foregroundColor(.gray)
-            }
+        Section{
+            TextField("USG",text: $contentViewModel.usgvalue)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .multilineTextAlignment(.center)
+                .keyboardType(.decimalPad)
+                .frame(width: 300, height: 50)
+        }header: {
+            Text("Input:「Urinary Specific Gravity」")
+                .foregroundColor(.gray)
+        }
     }//private func usgform
 }//extension ContentView
 
@@ -94,17 +168,14 @@ extension ContentView{
 extension ContentView{
     private func colorspicker() -> some View{
         Section{
-                Picker(selection: $selection,label: Text("Urine Color")){
+            Picker(selection: $selection,label: Text("")){
                 ForEach(0..<selections.count){index in
                     Text(self.selections[index])
-                        
-            }//ForEach
+                }//ForEach
             }//Picker
-                .frame(width: 300, height: 50)
-                .border(Color.gray)
+            .labelsHidden()
         }header: {
             Text("Choose:「Urine Color」")
-                .foregroundColor(.gray)
         }
     }//private func colors
 }//extension ContentView
@@ -113,6 +184,13 @@ extension ContentView{
     private func pickerbutton() -> some View{
         Button(action:{
             contentViewModel.urinecolor = selections[selection]
+            contentViewModel.urovalue = uroarray[uroselection]
+            contentViewModel.obvalue = obarray[obselection]
+            contentViewModel.bilvalue = bilarray[bilselection]
+            contentViewModel.ketonvalue = ketonarray[ketonselection]
+            contentViewModel.gluvalue = gluarray[gluselection]
+            contentViewModel.tpvalue = tparray[tpselection]
+            contentViewModel.phvalue = pharray[phselection]
         }){
             Text("Picker Register")
                 .padding(10)
@@ -122,6 +200,21 @@ extension ContentView{
                 .cornerRadius(20)
         }//Button
     }//func pickerbutton
+}//extension ContentView
+
+extension ContentView{
+    private func segmentedpicker(headertext:String,pickertext:String, pickerarray:[String],segmentedselection:Binding<Int>) -> some View{
+        Section{
+            Picker(selection:segmentedselection , label: Text(pickertext)){
+                ForEach(0..<pickerarray.count){index in
+                    Text(pickerarray[index])
+                }
+            }//Picker
+            .pickerStyle(SegmentedPickerStyle())
+        }header: {
+            Text(headertext)
+        }
+    }//func segmentedpicker
 }//extension ContentView
 
 
