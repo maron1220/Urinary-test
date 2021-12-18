@@ -26,7 +26,7 @@ struct ContentView: View {
         "Milky white"
     ]
     
-    let uro = [
+    let uroarray = [
         "Normal",
         "+",
         "++",
@@ -39,11 +39,11 @@ struct ContentView: View {
                 Form{
                 usgform()
                 colorspicker()
-//                pickerbutton()
-                    segmentedpicker(headertext: "Choose:「Uro Value」", pickertext: "Uro", pickerarray: uro, segmentedselection: $uroselection)
+                segmentedpicker(headertext: "Choose:「Uro Value」", pickertext: "Uro", pickerarray: uroarray, segmentedselection: $uroselection)
                 }
+                pickerbutton()
                 Spacer()
-//                buttons()
+                buttons()
 //                form()
             }//VStack
             .navigationTitle(Text("Urinary Test"))
@@ -121,6 +121,7 @@ extension ContentView{
     private func pickerbutton() -> some View{
         Button(action:{
             contentViewModel.urinecolor = selections[selection]
+            contentViewModel.urovalue = uroarray[uroselection]
         }){
             Text("Picker Register")
                 .padding(10)

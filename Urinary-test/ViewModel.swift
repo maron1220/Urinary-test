@@ -39,11 +39,18 @@ class ContentViewModel : ObservableObject{
         }//set(newurinecolor)
     }//var urinecolor
     
+    var urovalue : String{
+        get{content.urovalue}
+        set(newurovalue){
+            content.urovalue = newurovalue
+        }//set(newuro)
+    }//var uro
+    
 }//class ContentViewModel
 
 extension ContentViewModel{
     func pdfData() -> Data?{
-        return PDFCreator().pdfData(title: self.title, body: self.body,usgvalue:self.usgvalue,urinecolor:self.urinecolor)
+        return PDFCreator().pdfData(title: self.title, body: self.body,usgvalue:self.usgvalue,urinecolor:self.urinecolor,urovalue:self.urovalue)
     }//func pdfData
     
     func clear(){
@@ -51,6 +58,7 @@ extension ContentViewModel{
         self.body = ""
         self.usgvalue = ""
         self.urinecolor = ""
+        self.urovalue = ""
     }//func clear
     //Userがtitleもしくはbodyを空にしたい時に空を返すために作成。
     

@@ -75,6 +75,17 @@ extension PDFCreator{
         urinecolor.draw(in:urinecolorRect,withAttributes:urinecolorattributes)
     }//addUrineColor
     
+    private func addUroValue(urovalue:String){
+        let urovalueRect = CGRect(x:20,y:90,width:pageReact.width - 40,height: 40)
+        
+        let urovalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        urovalue.draw(in:urovalueRect,withAttributes:urovalueattributes)
+    }//addUrovalueColor
+    
     private func addTitle(title : String){
         let textRect = CGRect(x:20,y:50,width: pageReact.width - 40 ,height: 40)
         
@@ -85,6 +96,8 @@ extension PDFCreator{
         
         title.draw(in:textRect,withAttributes:attributes)
     }//addTitle
+    
+   
     
     private func addBody(body:String){
         let paragraphStyle = NSMutableParagraphStyle()
@@ -102,12 +115,13 @@ extension PDFCreator{
 }//extension PDFCreator
 
 extension PDFCreator{
-    func pdfData(title:String,body:String,usgvalue:String,urinecolor:String) -> Data?{
+    func pdfData(title:String,body:String,usgvalue:String,urinecolor:String,urovalue:String) -> Data?{
         if let renderer = self.renderer{
             let data = renderer.pdfData{ ctx in
                 ctx.beginPage()
                 addUsgValue(usgvalue: usgvalue)
                 addUrineColor(urinecolor: urinecolor)
+                addUroValue(urovalue: urovalue)
                 addTitle(title: title)
                 addBody(body: body)
             }

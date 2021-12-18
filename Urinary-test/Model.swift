@@ -14,4 +14,5 @@ struct Content{
     var body : String = ""
     var usgvalue : String = "0"
     var urinecolor : String = ""
+    var urovalue:String = ""
 }
