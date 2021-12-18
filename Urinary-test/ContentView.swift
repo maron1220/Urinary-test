@@ -11,8 +11,9 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject private var contentViewModel:ContentViewModel
     //EnvironmentObject=複数のViewでObservableObjectを使う。
+    @State private var selection = 0 //urinecolor's picker
+    @State private var segmentedselection = 0//segmentedpicker
     
-    @State private var selection = 0
     let selections = [
         "'Colorless' or 'Light yellow'",
         "'Dark yellow' or 'Yellow-orange'",
@@ -25,14 +26,24 @@ struct ContentView: View {
         "Milky white"
     ]
     
+    let uro = [
+        "Normal",
+        "+",
+        "++",
+        "+++"
+    ]
+    
     var body: some View {
         NavigationView{
             VStack{
+                Form{
                 usgform()
                 colorspicker()
-                pickerbutton()
+//                pickerbutton()
+                segmentedpicker(headertext: "Choose:「Uro Value」", pickertext: "Uro", pickerarray: uro)
+                }
                 Spacer()
-                buttons()
+//                buttons()
 //                form()
             }//VStack
             .navigationTitle(Text("Urinary Test"))
@@ -94,17 +105,14 @@ extension ContentView{
 extension ContentView{
     private func colorspicker() -> some View{
         Section{
-                Picker(selection: $selection,label: Text("Urine Color")){
+                Picker(selection: $selection,label: Text("")){
                 ForEach(0..<selections.count){index in
                     Text(self.selections[index])
-                        
             }//ForEach
             }//Picker
-                .frame(width: 300, height: 50)
-                .border(Color.gray)
+                .labelsHidden()
         }header: {
             Text("Choose:「Urine Color」")
-                .foregroundColor(.gray)
         }
     }//private func colors
 }//extension ContentView
@@ -122,6 +130,21 @@ extension ContentView{
                 .cornerRadius(20)
         }//Button
     }//func pickerbutton
+}//extension ContentView
+
+extension ContentView{
+    private func segmentedpicker(headertext:String,pickertext:String, pickerarray:[String]) -> some View{
+        Section{
+            Picker(selection:$segmentedselection , label: Text(pickertext)){
+                ForEach(0..<pickerarray.count){index in
+                    Text(pickerarray[index])
+                }
+            }//Picker
+            .pickerStyle(SegmentedPickerStyle())
+        }header: {
+            Text(headertext)
+        }
+    }//func segmentedpicker
 }//extension ContentView
 
 
