@@ -37,6 +37,7 @@ extension PDFCreator{
     private func addUsgValue(usgvalue : String){
         
         var usgcolor = UIColor.black
+        var usgtitle = "USG :"
         
         var doubleusg:Double
         if let convertusg = Double(usgvalue){
@@ -56,11 +57,13 @@ extension PDFCreator{
             usgcolor = UIColor.black
         }
 
-        let usgRect = CGRect(x: 20, y: 0, width: pageReact.width - 40, height: 40)
+        let usgtitleRect = CGRect(x: 20, y: 10, width: 100, height: 40)
+        let usgRect = CGRect(x: 150, y: 10, width: pageReact.width - 40, height: 40)
         var usgattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:usgcolor
         ]
+        usgtitle.draw(in:usgtitleRect,withAttributes:usgattributes)
         usgvalue.draw(in:usgRect,withAttributes:usgattributes)
     }//private func addUsgData
     
@@ -106,7 +109,7 @@ extension PDFCreator{
         ]
         
         bilvalue.draw(in:bilvalueRect,withAttributes:bilvalueattributes)
-    }//addBilvalueColor
+    }//addBilvalue
     
     private func addKetonValue(ketonvalue:String){
         let ketonvalueRect = CGRect(x:20,y:210,width:pageReact.width - 40,height: 40)
@@ -117,7 +120,7 @@ extension PDFCreator{
         ]
         
         ketonvalue.draw(in:ketonvalueRect,withAttributes:ketonvalueattributes)
-    }//addKetonvalueColor
+    }//addKetonvalue
     
     private func addGluValue(gluvalue:String){
         let gluvalueRect = CGRect(x:20,y:250,width:pageReact.width - 40,height: 40)
@@ -128,7 +131,7 @@ extension PDFCreator{
         ]
         
         gluvalue.draw(in:gluvalueRect,withAttributes:gluvalueattributes)
-    }//addGluvalueColor
+    }//addGluvalue
     
     private func addTpValue(tpvalue:String){
         let tpvalueRect = CGRect(x:20,y:290,width:pageReact.width - 40,height: 40)
@@ -139,7 +142,7 @@ extension PDFCreator{
         ]
         
         tpvalue.draw(in:tpvalueRect,withAttributes:tpvalueattributes)
-    }//addUrovalueColor
+    }//addTpvalue
     
     private func addPhValue(phvalue:String){
         let phvalueRect = CGRect(x:20,y:330,width:pageReact.width - 40,height: 40)
@@ -150,7 +153,137 @@ extension PDFCreator{
         ]
         
         phvalue.draw(in:phvalueRect,withAttributes:phvalueattributes)
-    }//addUrovalueColor
+    }//addPhvalue
+    
+    private func addRbcValue(rbcvalue:String){
+        let rbcvalueRect = CGRect(x:20,y:370,width:pageReact.width - 40,height: 40)
+        
+        let rbcvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        rbcvalue.draw(in:rbcvalueRect,withAttributes:rbcvalueattributes)
+    }//addRbcvalue
+    
+    private func addWbcValue(wbcvalue:String){
+        let wbcvalueRect = CGRect(x:20,y:410,width:pageReact.width - 40,height: 40)
+        
+        let wbcvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        wbcvalue.draw(in:wbcvalueRect,withAttributes:wbcvalueattributes)
+    }//addWbcvalue
+    
+    private func addMicroValue(microvalue:String){
+        let microvalueRect = CGRect(x:20,y:450,width:pageReact.width - 40,height: 40)
+        
+        let microvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        microvalue.draw(in:microvalueRect,withAttributes:microvalueattributes)
+    }//addMicrovalue
+    
+    private func addMicroDetail(microdetail:String){
+        let microdetailRect = CGRect(x:20,y:490,width:pageReact.width - 40,height: 40)
+        
+        let microdetailattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        microdetail.draw(in:microdetailRect,withAttributes:microdetailattributes)
+    }//addMicrodetail
+    
+    private func addMicroComment(microcomment:String){
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        
+        let attributes = [
+            NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20),
+            NSAttributedString.Key.paragraphStyle:paragraphStyle,
+            NSAttributedString.Key.foregroundColor:UIColor.gray
+        ]//attributes
+        
+        let microcommentRect = CGRect(x: 20, y: 530, width: pageReact.width - 40, height: 60)
+        microcomment.draw(in:microcommentRect,withAttributes:attributes)
+    }//addMicroComment
+    
+    private func addCrystalValue(crystalvalue:String){
+        let crystalvalueRect = CGRect(x:20,y:590,width:pageReact.width - 40,height: 40)
+        
+        let crystalvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        crystalvalue.draw(in:crystalvalueRect,withAttributes:crystalvalueattributes)
+    }//addCrystalvalue
+    
+    private func addCrystalDetail(crystaldetail:String){
+        let crystaldetailRect = CGRect(x:20,y:630,width:pageReact.width - 40,height: 40)
+        
+        let crystaldetailattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        crystaldetail.draw(in:crystaldetailRect,withAttributes:crystaldetailattributes)
+    }//addCrystalDetail
+    
+    private func addCrystalComment(crystalcomment:String){
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        
+        let attributes = [
+            NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20),
+            NSAttributedString.Key.paragraphStyle:paragraphStyle,
+            NSAttributedString.Key.foregroundColor:UIColor.gray
+        ]//attributes
+        
+        let crystalcommentRect = CGRect(x: 20, y: 670, width: pageReact.width - 40, height: 60)
+        crystalcomment.draw(in:crystalcommentRect,withAttributes:attributes)
+    }//addCrystalComment
+    
+    private func addCastValue(castvalue:String){
+        let castvalueRect = CGRect(x:20,y:730,width:pageReact.width - 40,height: 40)
+        
+        let castvalueattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        castvalue.draw(in:castvalueRect,withAttributes:castvalueattributes)
+    }//addCastValue
+    
+    private func addCastDetail(castdetail:String){
+        let castdetailRect = CGRect(x:20,y:770,width:pageReact.width - 40,height: 40)
+        
+        let castdetailattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.red
+        ]
+        
+        castdetail.draw(in:castdetailRect,withAttributes:castdetailattributes)
+    }//addCastDetail
+    
+    private func addCastComment(castcomment:String){
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        
+        let attributes = [
+            NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20),
+            NSAttributedString.Key.paragraphStyle:paragraphStyle,
+            NSAttributedString.Key.foregroundColor:UIColor.gray
+        ]//attributes
+        
+        let castcommentRect = CGRect(x: 20, y: 810, width: pageReact.width - 40, height: 60)
+        castcomment.draw(in:castcommentRect,withAttributes:attributes)
+    }//addMicroComment
     
     private func addTitle(title : String){
         let textRect = CGRect(x:20,y:50,width: pageReact.width - 40 ,height: 40)
@@ -178,10 +311,12 @@ extension PDFCreator{
         let bodyRect = CGRect(x: 20, y: 100, width: pageReact.width - 40, height: pageReact.height - 80)
         body.draw(in:bodyRect,withAttributes:attributes)
     }//addBody
+    
+    
 }//extension PDFCreator
 
 extension PDFCreator{
-    func pdfData(title:String,body:String,usgvalue:String,urinecolor:String,urovalue:String,obvalue:String,bilvalue:String,ketonvalue:String,gluvalue:String,tpvalue:String,phvalue:String) -> Data?{
+    func pdfData(title:String,body:String,usgvalue:String,urinecolor:String,urovalue:String,obvalue:String,bilvalue:String,ketonvalue:String,gluvalue:String,tpvalue:String,phvalue:String,rbcvalue:String,wbcvalue:String,microvalue:String,crystalvalue:String,castvalue:String,microdetail:String,crystaldetail:String,castdetail:String,microcomment:String,crystalcomment:String,castcommit:String) -> Data?{
         if let renderer = self.renderer{
             let data = renderer.pdfData{ ctx in
                 ctx.beginPage()
@@ -194,6 +329,17 @@ extension PDFCreator{
                 addGluValue(gluvalue: gluvalue)
                 addTpValue(tpvalue: tpvalue)
                 addPhValue(phvalue: phvalue)
+                addRbcValue(rbcvalue: rbcvalue)
+                addWbcValue(wbcvalue: wbcvalue)
+                //addMicroValue(microvalue: microvalue)
+                //addCrystalValue(crystalvalue: crystalvalue)
+                //addCastValue(castvalue: castvalue)
+                addMicroDetail(microdetail: microdetail)
+                addCrystalDetail(crystaldetail: crystaldetail)
+                addCastDetail(castdetail: castdetail)
+                addMicroComment(microcomment: microcomment)
+                addCrystalComment(crystalcomment: crystalcomment)
+                addCastComment(castcomment: castcommit)
                 addTitle(title: title)
                 addBody(body: body)
             }
