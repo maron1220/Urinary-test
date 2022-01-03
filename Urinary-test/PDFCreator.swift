@@ -32,7 +32,7 @@ class PDFCreator: NSObject {
         self.pageReact = pageRect
         self.renderer = UIGraphicsPDFRenderer(bounds:self.pageReact,format: format)
         
-        self.rectwidth = a4width/6
+        self.rectwidth = a4width/4
         
         super.init()
     }
@@ -67,8 +67,8 @@ extension PDFCreator{
             usgcolor = UIColor.black
         }
 
-        let usgtitleRect = CGRect(x:rectwidth, y: a4height/21, width: 100, height: 40)
-        let usgRect = CGRect(x:a4width/3 , y: a4height/21, width: pageReact.width - 40, height: 40)
+        let usgtitleRect = CGRect(x:rectwidth, y: a4height/21*2, width: 100, height: 40)
+        let usgRect = CGRect(x:a4width/2 , y: a4height/21*2, width: pageReact.width - 40, height: 40)
         var usgattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:usgcolor
@@ -78,7 +78,7 @@ extension PDFCreator{
     }//private func addUsgData
     
     private func addUrineColor(urinecolor:String){
-        let urinecolorRect = CGRect(x:rectwidth,y:a4height/21*2,width:pageReact.width - 40,height: 40)
+        let urinecolorRect = CGRect(x:rectwidth,y:a4height/21*3,width:pageReact.width - 40,height: 40)
         
         let urinecolorattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -89,7 +89,7 @@ extension PDFCreator{
     }//addUrineColor
     
     private func addUroValue(urovalue:String){
-        let urovalueRect = CGRect(x:rectwidth,y:a4height/21*3,width:pageReact.width - 40,height: 40)
+        let urovalueRect = CGRect(x:rectwidth,y:a4height/21*4,width:pageReact.width - 40,height: 40)
         
         let urovalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -100,7 +100,7 @@ extension PDFCreator{
     }//addUrovalue
     
     private func addObValue(obvalue:String){
-        let obvalueRect = CGRect(x:rectwidth,y:a4height/21*4,width:pageReact.width - 40,height: 40)
+        let obvalueRect = CGRect(x:rectwidth,y:a4height/21*5,width:pageReact.width - 40,height: 40)
         
         let obvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -111,7 +111,7 @@ extension PDFCreator{
     }//addObvalue
     
     private func addBilValue(bilvalue:String){
-        let bilvalueRect = CGRect(x:rectwidth,y:a4height/21*5,width:pageReact.width - 40,height: 40)
+        let bilvalueRect = CGRect(x:rectwidth,y:a4height/21*6,width:pageReact.width - 40,height: 40)
         
         let bilvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -122,7 +122,7 @@ extension PDFCreator{
     }//addBilvalue
     
     private func addKetonValue(ketonvalue:String){
-        let ketonvalueRect = CGRect(x:rectwidth,y:a4height/21*5,width:pageReact.width - 40,height: 40)
+        let ketonvalueRect = CGRect(x:rectwidth,y:a4height/21*7,width:pageReact.width - 40,height: 40)
         
         let ketonvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -133,7 +133,7 @@ extension PDFCreator{
     }//addKetonvalue
     
     private func addGluValue(gluvalue:String){
-        let gluvalueRect = CGRect(x:rectwidth,y:a4height/21*6,width:pageReact.width - 40,height: 40)
+        let gluvalueRect = CGRect(x:rectwidth,y:a4height/21*8,width:pageReact.width - 40,height: 40)
         
         let gluvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -144,7 +144,7 @@ extension PDFCreator{
     }//addGluvalue
     
     private func addTpValue(tpvalue:String){
-        let tpvalueRect = CGRect(x:rectwidth,y:a4height/21*7,width:pageReact.width - 40,height: 40)
+        let tpvalueRect = CGRect(x:rectwidth,y:a4height/21*9,width:pageReact.width - 40,height: 40)
         
         let tpvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -155,7 +155,7 @@ extension PDFCreator{
     }//addTpvalue
     
     private func addPhValue(phvalue:String){
-        let phvalueRect = CGRect(x:rectwidth,y:a4height/21*8,width:pageReact.width - 40,height: 40)
+        let phvalueRect = CGRect(x:rectwidth,y:a4height/21*10,width:pageReact.width - 40,height: 40)
         
         let phvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -166,7 +166,7 @@ extension PDFCreator{
     }//addPhvalue
     
     private func addRbcValue(rbcvalue:String){
-        let rbcvalueRect = CGRect(x:rectwidth,y:a4height/21*9,width:pageReact.width - 40,height: 40)
+        let rbcvalueRect = CGRect(x:rectwidth,y:a4height/21*11,width:pageReact.width - 40,height: 40)
         
         let rbcvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -177,7 +177,7 @@ extension PDFCreator{
     }//addRbcvalue
     
     private func addWbcValue(wbcvalue:String){
-        let wbcvalueRect = CGRect(x:rectwidth,y:a4height/21*10,width:pageReact.width - 40,height: 40)
+        let wbcvalueRect = CGRect(x:rectwidth,y:a4height/21*12,width:pageReact.width - 40,height: 40)
         
         let wbcvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -199,7 +199,7 @@ extension PDFCreator{
 //    }//addMicrovalue
     
     private func addMicroDetail(microdetail:String){
-        let microdetailRect = CGRect(x:rectwidth,y:a4height/21*11,width:pageReact.width - 40,height: 40)
+        let microdetailRect = CGRect(x:rectwidth,y:a4height/21*13,width:pageReact.width - 40,height: 40)
         
         let microdetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -219,7 +219,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let microcommentRect = CGRect(x:rectwidth, y: a4height/21*12, width: pageReact.width - 40, height: 60)
+        let microcommentRect = CGRect(x:rectwidth, y: a4height/21*14, width: pageReact.width - 40, height: 60)
         microcomment.draw(in:microcommentRect,withAttributes:attributes)
     }//addMicroComment
     
@@ -235,7 +235,7 @@ extension PDFCreator{
 //    }//addCrystalvalue
     
     private func addCrystalDetail(crystaldetail:String){
-        let crystaldetailRect = CGRect(x:rectwidth,y:a4height/21*14,width:pageReact.width - 40,height: 40)
+        let crystaldetailRect = CGRect(x:rectwidth,y:a4height/21*15.5,width:pageReact.width - 40,height: 40)
         
         let crystaldetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -255,7 +255,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let crystalcommentRect = CGRect(x:rectwidth, y:a4height/21*15, width: pageReact.width - 40, height: 60)
+        let crystalcommentRect = CGRect(x:rectwidth, y:a4height/21*16.5, width: pageReact.width - 40, height: 60)
         crystalcomment.draw(in:crystalcommentRect,withAttributes:attributes)
     }//addCrystalComment
     
@@ -271,7 +271,7 @@ extension PDFCreator{
 //    }//addCastValue
     
     private func addCastDetail(castdetail:String){
-        let castdetailRect = CGRect(x:rectwidth,y:a4height/21*17,width:pageReact.width - 40,height: 40)
+        let castdetailRect = CGRect(x:rectwidth,y:a4height/21*18,width:pageReact.width - 40,height: 40)
         
         let castdetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -291,7 +291,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let castcommentRect = CGRect(x:rectwidth, y: a4height/21*18, width: pageReact.width - 40, height: 60)
+        let castcommentRect = CGRect(x:rectwidth, y: a4height/21*19.5, width: pageReact.width - 40, height: 60)
         castcomment.draw(in:castcommentRect,withAttributes:attributes)
     }//addMicroComment
     
@@ -334,6 +334,48 @@ extension PDFCreator{
         path.stroke()
     }
     
+    private func partitionLine(_ rect:CGRect){
+        let partitionpath = UIBezierPath()
+        for i in 2 ... 13{
+            partitionpath.move(to: CGPoint(x:0, y:a4height/21*Double(i)))
+            partitionpath.addLine(to: CGPoint(x:8.5*72.0,y:a4height/21*Double(i)))
+            partitionpath.lineWidth = 2
+            UIColor.black.setStroke()
+            partitionpath.stroke()
+        }
+    }//prtitionLine
+    
+    private func secondpartitionLine(_ rect:CGRect){
+        let partitionpath = UIBezierPath()
+        for i in 0 ... 1{
+            partitionpath.move(to: CGPoint(x:0, y:a4height/21*(15.5+2.5*Double(i))))
+            partitionpath.addLine(to: CGPoint(x:8.5*72.0,y:a4height/21*(15.5+2.5*Double(i))))
+            partitionpath.lineWidth = 2
+            UIColor.black.setStroke()
+            partitionpath.stroke()
+        }
+    }//secondprtitionLine
+    
+    private func thirdpartitionLine(_ rect:CGRect){
+        let partitionpath = UIBezierPath()
+        for i in 0 ... 2{
+            partitionpath.move(to: CGPoint(x:0, y:a4height/21*(14+2.5*Double(i))))
+            partitionpath.addLine(to: CGPoint(x:8.5*72.0,y:a4height/21*(14+2.5*Double(i))))
+            partitionpath.lineWidth = 2
+            UIColor.lightGray.setStroke()
+            partitionpath.stroke()
+        }
+    }//thirdprtitionLine
+    
+    private func verticalLine(_ rect:CGRect){
+        let path = UIBezierPath()
+        path.move(to:CGPoint(x:rectwidth-20,y:a4height/21*2))
+        path.addLine(to: CGPoint(x:rectwidth-20,y:a4height))
+        path.lineWidth = 2
+        UIColor.black.setStroke()
+        path.stroke()
+    }//verticalLine
+    
 }//extension PDFCreator
 
 extension PDFCreator{
@@ -363,7 +405,12 @@ extension PDFCreator{
                 addCastComment(castcomment: castcommit)
                 addTitle(title: title)
                 addBody(body: body)
-                draw(CGRect(x:0, y:0, width: pageReact.width - 40, height: pageReact.height - 80))
+                
+                partitionLine(CGRect(x:0, y:0, width:0, height:0))
+                secondpartitionLine(CGRect(x:0, y:0, width: 0, height: 0))
+                thirdpartitionLine(CGRect(x:0, y:0, width:0, height:0))
+                verticalLine(CGRect(x:0, y:0, width:0, height:0))
+                draw(CGRect(x:0, y:0, width: 0, height:0))
             }
             return data
         }//if let renderer
