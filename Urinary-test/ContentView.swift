@@ -19,6 +19,15 @@ struct ContentView: View {
     @State private var gluselection = 0//segmentedpicker
     @State private var tpselection = 0//segmentedpicker
     @State private var phselection = 0//segmentedpicker
+    @State private var rbcselection = 0//segmentedpicker
+    @State private var wbcselection = 0//segmentedpicker
+    @State private var microselection = 0//segmentedpicker
+    @State private var crystalselection = 0//segmentedpicker
+    @State private var castselection = 0//segmentedpicker
+    @State private var microdetailselection = 0
+    @State private var crystaldetailselection = 0
+    @State private var castdetailselection = 0
+    
     
     let selections = [
         "'Colorless' or 'Light yellow'",
@@ -84,6 +93,58 @@ struct ContentView: View {
         "8.5"
     ]
     
+    let wbcarray = [
+        "-",
+        "+"
+    ]
+    
+    let rbcarray = [
+        "-",
+        "+"
+    ]
+    
+    let microarray = [
+        "-",
+        "+"
+    ]
+    
+    let crystalarray = [
+        "-",
+        "+"
+    ]
+    
+    let castarray = [
+        "-",
+        "+"
+        
+    ]
+    
+    let microdetailarray = [
+        "Nothing",
+        "bacteria",
+        "yeast",
+        "fungi"
+    ]
+    
+    let crystaldetailarray = [
+        "Nothing",
+        "Struvite crystals",
+        "Calcium oxalate dihydride crystals",
+        "Cystine crystals",
+        "Ammonium biurate or uric acid crystals"
+    ]
+    
+    let castdetailarray = [
+        "Nothing",
+        "Hyaline casts",
+        "Epithelial cellular casts",
+        "Granular casts",
+        "Waxy casts",
+        "RBC casts",
+        "WBC casts",
+        "Fatty casts"
+    ]
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -91,28 +152,51 @@ struct ContentView: View {
                     usgform()
                     colorspicker()
                     
-                    segmentedpicker(headertext: "Choose:「Uro Value」", pickertext: "Uro", pickerarray: uroarray, segmentedselection: $uroselection)
+                    Group{
+                        segmentedpicker(headertext: "Urobilinogen", pickertext: "Uro", pickerarray: uroarray, segmentedselection: $uroselection)
+                        
+                        segmentedpicker(headertext: "OB", pickertext: "OB", pickerarray: obarray, segmentedselection: $obselection)
+                        
+                        segmentedpicker(headertext: "Bilirubin", pickertext: "Bil", pickerarray: bilarray, segmentedselection: $bilselection)
+                        
+                        segmentedpicker(headertext: "Keton", pickertext: "Keton", pickerarray: ketonarray, segmentedselection: $ketonselection)
+                        
+                        segmentedpicker(headertext: "Glucose", pickertext: "Glu", pickerarray: gluarray, segmentedselection: $gluselection)
+                        
+                        segmentedpicker(headertext: "TP", pickertext: "TP", pickerarray: tparray, segmentedselection: $tpselection)
+                        
+                        segmentedpicker(headertext: "pH", pickertext: "pH", pickerarray: pharray, segmentedselection: $phselection)
+                    }//Group
                     
-                    segmentedpicker(headertext: "Choose:「OB Value」", pickertext: "OB", pickerarray: obarray, segmentedselection: $obselection)
                     
-                    segmentedpicker(headertext: "Choose:「Bilirubin Value」", pickertext: "Bil", pickerarray: bilarray, segmentedselection: $bilselection)
+                    HStack{
+                        segmentedpicker(headertext: "RBC", pickertext: "RBC", pickerarray: rbcarray, segmentedselection: $rbcselection)
+                        
+                        segmentedpicker(headertext: "WBC", pickertext: "WBC", pickerarray: wbcarray, segmentedselection: $wbcselection)
+                    }//HStack
                     
-                    segmentedpicker(headertext: "Choose:「Keton Value」", pickertext: "Keton", pickerarray: ketonarray, segmentedselection: $ketonselection)
+                    Group{
+                        //                    segmentedpicker(headertext: "MicroOrganism", pickertext: "Micro", pickerarray: microarray, segmentedselection: $microselection)
+                        secondform(headertext: "MicroOrganism", pickertext: "Micro", pickerarray: microarray, pickerselection: $microselection,secondpickertext:"Detail",secondpickerarray:microdetailarray,secondpickerselection:$microdetailselection,secondtexteditor: $contentViewModel.microcomment)
+                        
+                        //                    segmentedpicker(headertext: "UrineCrystals", pickertext: "Crystal", pickerarray: crystalarray, segmentedselection: $crystalselection)
+                        secondform(headertext: "UrineCrystals", pickertext: "Crystal", pickerarray: crystalarray, pickerselection: $crystalselection,secondpickertext:"Detail",secondpickerarray:crystaldetailarray,secondpickerselection:$crystaldetailselection,secondtexteditor: $contentViewModel.crystalcomment)
+                        
+                        
+                        //                    segmentedpicker(headertext: "UrineCasts", pickertext: "Cast", pickerarray: castarray, segmentedselection: $castselection)
+                        secondform(headertext: "UrineCasts", pickertext: "Cast", pickerarray: castarray, pickerselection: $castselection,secondpickertext:"Detail",secondpickerarray:castdetailarray,secondpickerselection:$castdetailselection,secondtexteditor: $contentViewModel.castcomment)
+                        
+                    }//Group
                     
-                    segmentedpicker(headertext: "Choose:「Glucose Value」", pickertext: "Glu", pickerarray: gluarray, segmentedselection: $gluselection)
                     
-                    segmentedpicker(headertext: "Choose:「TP Value」", pickertext: "TP", pickerarray: tparray, segmentedselection: $tpselection)
-                    
-                    segmentedpicker(headertext: "Choose:「pH Value」", pickertext: "pH", pickerarray: pharray, segmentedselection: $phselection)
                 }//Form
                 pickerbutton()
                 buttons()
-                //                form()
             }//VStack
             .navigationTitle(Text("Urinary Test"))
         }//NavigationView
-    .environmentObject(contentViewModel)
-}//var body
+        .environmentObject(contentViewModel)
+    }//var body
 }//strunc ContentView
 
 
@@ -126,25 +210,37 @@ extension ContentView{
                 .keyboardType(.decimalPad)
                 .frame(width: 300, height: 50)
         }header: {
-            Text("Input:「Urinary Specific Gravity」")
-                .foregroundColor(.gray)
+            Text("Urinary Specific Gravity")
+            //                .foregroundColor(.gray)
         }
     }//private func usgform
 }//extension ContentView
 
 extension ContentView{
-    private func form() -> some View{
-        Form{
-            TextField("Title",text: $contentViewModel.title)
-            Text("Body").font(.headline)
+    private func secondform(headertext:String,pickertext:String,pickerarray:[String],pickerselection:Binding<Int>,secondpickertext:String,secondpickerarray:[String],secondpickerselection:Binding<Int>,secondtexteditor:Binding<String>) -> some View{
+        
+        Section{
+//            Picker(selection:pickerselection , label: Text(pickertext)){
+//                ForEach(0..<pickerarray.count){index in
+//                    Text(pickerarray[index])
+//                }
+//            }//Picker
+//            .pickerStyle(SegmentedPickerStyle())
             
-            TextEditor(text: $contentViewModel.body)
-                .frame(height:100)
-            
+            Picker(selection:secondpickerselection , label: Text(secondpickertext)){
+                ForEach(0..<secondpickerarray.count){num in
+                    Text(secondpickerarray[num])
+            }
             //TextFieldとTextEditerの内容をBinding($)でViewModelに渡す。
-        }//Form
-        .frame(height:270)
-        .padding(4)
+            }//Picker
+            TextEditor(text: secondtexteditor)
+                .frame(height:100)
+        }//Section
+    header:{
+        Text(headertext)
+    }footer: {
+        Text("comment")
+    }
     }//private func form
 }//extension ContentView
 //入力されたデータの一時保存場所。
@@ -168,14 +264,14 @@ extension ContentView{
 extension ContentView{
     private func colorspicker() -> some View{
         Section{
-            Picker(selection: $selection,label: Text("")){
+            Picker(selection: $selection,label: Text("Detail")){
                 ForEach(0..<selections.count){index in
                     Text(self.selections[index])
                 }//ForEach
             }//Picker
             .labelsHidden()
         }header: {
-            Text("Choose:「Urine Color」")
+            Text("Urine Color")
         }
     }//private func colors
 }//extension ContentView
@@ -191,6 +287,14 @@ extension ContentView{
             contentViewModel.gluvalue = gluarray[gluselection]
             contentViewModel.tpvalue = tparray[tpselection]
             contentViewModel.phvalue = pharray[phselection]
+            contentViewModel.rbcvalue = rbcarray[rbcselection]
+            contentViewModel.wbcvalue = wbcarray[wbcselection]
+            contentViewModel.microvalue = microarray[microselection]
+            contentViewModel.crystalvalue = crystalarray[crystalselection]
+            contentViewModel.castvalue = castarray[castselection]
+            contentViewModel.microdetail = microdetailarray[microdetailselection]
+            contentViewModel.crystaldetail = crystaldetailarray[crystaldetailselection]
+            contentViewModel.castdetail = castdetailarray[castdetailselection]
         }){
             Text("Picker Register")
                 .padding(10)

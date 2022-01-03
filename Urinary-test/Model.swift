@@ -21,4 +21,20 @@ struct Content{
     var gluvalue:String = ""
     var tpvalue:String = ""
     var phvalue:String = ""
+    
+    var rbcvalue:String = ""
+    var wbcvalue:String = ""
+    var microvalue:String = ""
+    var crystalvalue:String = ""
+    var castvalue:String = ""
+    
+    var microdetail:String = ""
+    var crystaldetail:String = ""
+    var castdetail:String = ""
+    
+    var microcomment:String = ""
+    var crystalcomment:String = ""
+    var castcomment:String = ""
+    
+    
 }
