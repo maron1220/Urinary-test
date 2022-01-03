@@ -68,7 +68,7 @@ extension PDFCreator{
         }
 
         let usgtitleRect = CGRect(x:rectwidth, y: a4height/21, width: 100, height: 40)
-        let usgRect = CGRect(x:a4width/3, y: a4height/21, width: pageReact.width - 40, height: 40)
+        let usgRect = CGRect(x:a4width/3 , y: a4height/21, width: pageReact.width - 40, height: 40)
         var usgattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:usgcolor
@@ -322,6 +322,17 @@ extension PDFCreator{
         body.draw(in:bodyRect,withAttributes:attributes)
     }//addBody
     
+    private func draw(_ rect:CGRect){
+        let path = UIBezierPath()
+        path.move(to:CGPoint(x:0,y:0))
+        path.addLine(to: CGPoint(x:8.5*72.0,y:0))
+        path.addLine(to: CGPoint(x:8.5*72.0,y:11*72.0))
+        path.addLine(to: CGPoint(x:0,y:11*72.0))
+        path.addLine(to: CGPoint(x:0,y:0))
+        path.lineWidth = 10
+        UIColor.black.setStroke()
+        path.stroke()
+    }
     
 }//extension PDFCreator
 
@@ -352,6 +363,7 @@ extension PDFCreator{
                 addCastComment(castcomment: castcommit)
                 addTitle(title: title)
                 addBody(body: body)
+                draw(CGRect(x:0, y:0, width: pageReact.width - 40, height: pageReact.height - 80))
             }
             return data
         }//if let renderer
