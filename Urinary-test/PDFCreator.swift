@@ -44,10 +44,22 @@ class PDFCreator: NSObject {
 
 extension PDFCreator{
     
+    private func addTitleText(title:String){
+        let titlecolorRect = CGRect(x:rectwidth*1.3,y:5,width:pageReact.width - 40,height:a4height/21*2)
+        
+        let titlecolorattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 50),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        title.draw(in:titlecolorRect,withAttributes:titlecolorattributes)
+    }//addTitleText
+    
+    
     private func addUsgValue(usgvalue : String){
         
         var usgcolor = UIColor.black
-        var usgtitle = "USG :"
+        var usgTitle = "USG"
         
         var doubleusg:Double
         if let convertusg = Double(usgvalue){
@@ -67,123 +79,240 @@ extension PDFCreator{
             usgcolor = UIColor.black
         }
 
-        let usgtitleRect = CGRect(x:rectwidth, y: a4height/21*2, width: 100, height: 40)
-        let usgRect = CGRect(x:a4width/2 , y: a4height/21*2, width: pageReact.width - 40, height: 40)
+        let usgtitleRect = CGRect(x:a4width/32, y: a4height/21*2, width:rectwidth, height:a4height/21)
+        let usgTitleattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let usgRect = CGRect(x:a4width/2*1.1 , y: a4height/21*2, width: pageReact.width - 40, height:a4height/21)
         var usgattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:usgcolor
         ]
-        usgtitle.draw(in:usgtitleRect,withAttributes:usgattributes)
+        
+        usgTitle.draw(in:usgtitleRect,withAttributes:usgTitleattributes)
         usgvalue.draw(in:usgRect,withAttributes:usgattributes)
     }//private func addUsgData
     
+   
     private func addUrineColor(urinecolor:String){
-        let urinecolorRect = CGRect(x:rectwidth,y:a4height/21*3,width:pageReact.width - 40,height: 40)
+        
+        let urineColorTitle = "Color"
+        
+        let urinecolorTitleRect = CGRect(x:a4width/32,y:a4height/21*3,width:rectwidth,height:a4height/21)
+        
+        let urinecoloTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let urinecolorRect = CGRect(x:a4width/3,y:a4height/21*3,width:pageReact.width - 40,height:a4height/21)
         
         let urinecolorattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        urineColorTitle.draw(in:urinecolorTitleRect,withAttributes:urinecoloTitlerattributes)
         urinecolor.draw(in:urinecolorRect,withAttributes:urinecolorattributes)
     }//addUrineColor
     
     private func addUroValue(urovalue:String){
-        let urovalueRect = CGRect(x:rectwidth,y:a4height/21*4,width:pageReact.width - 40,height: 40)
+        
+        let uroTitle = "Uro"
+        
+        let uroTitleRect = CGRect(x:a4width/32,y:a4height/21*4,width:rectwidth,height:a4height/21)
+        
+        let uroTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let urovalueRect = CGRect(x:a4width/2*1.1,y:a4height/21*4,width:pageReact.width - 40,height:a4height/21)
         
         let urovalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        uroTitle.draw(in:uroTitleRect,withAttributes:uroTitlerattributes)
         urovalue.draw(in:urovalueRect,withAttributes:urovalueattributes)
     }//addUrovalue
     
     private func addObValue(obvalue:String){
-        let obvalueRect = CGRect(x:rectwidth,y:a4height/21*5,width:pageReact.width - 40,height: 40)
+        
+        let obTitle = "OB"
+        
+        let obTitleRect = CGRect(x:a4width/32,y:a4height/21*5,width:rectwidth,height:a4height/21)
+        
+        let obTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let obvalueRect = CGRect(x:a4width/2*1.1,y:a4height/21*5,width:pageReact.width - 40,height:a4height/21)
         
         let obvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        obTitle.draw(in:obTitleRect,withAttributes:obTitlerattributes)
         obvalue.draw(in:obvalueRect,withAttributes:obvalueattributes)
     }//addObvalue
     
     private func addBilValue(bilvalue:String){
-        let bilvalueRect = CGRect(x:rectwidth,y:a4height/21*6,width:pageReact.width - 40,height: 40)
+        
+        let bilTitle = "Bilirubin"
+        
+        let bilTitleRect = CGRect(x:a4width/64,y:a4height/21*6,width:rectwidth,height:a4height/21)
+        
+        let bilTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let bilvalueRect = CGRect(x:a4width/2*1.1,y:a4height/21*6,width:pageReact.width - 40,height:a4height/21)
         
         let bilvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        bilTitle.draw(in:bilTitleRect,withAttributes:bilTitlerattributes)
         bilvalue.draw(in:bilvalueRect,withAttributes:bilvalueattributes)
     }//addBilvalue
     
     private func addKetonValue(ketonvalue:String){
-        let ketonvalueRect = CGRect(x:rectwidth,y:a4height/21*7,width:pageReact.width - 40,height: 40)
+        
+        let ketonTitle = "Keton"
+        
+        let ketonTitleRect = CGRect(x:a4width/32,y:a4height/21*7,width:rectwidth,height:a4height/21)
+        
+        let ketonTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let ketonvalueRect = CGRect(x:a4width/2*1.1,y:a4height/21*7,width:pageReact.width - 40,height:a4height/21)
         
         let ketonvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        ketonTitle.draw(in:ketonTitleRect,withAttributes:ketonTitlerattributes)
         ketonvalue.draw(in:ketonvalueRect,withAttributes:ketonvalueattributes)
     }//addKetonvalue
     
     private func addGluValue(gluvalue:String){
-        let gluvalueRect = CGRect(x:rectwidth,y:a4height/21*8,width:pageReact.width - 40,height: 40)
+        
+        let gluTitle = "Glucose"
+        
+        let gluTitleRect = CGRect(x:a4width/64,y:a4height/21*8,width:rectwidth,height:a4height/21)
+        
+        let gluTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let gluvalueRect = CGRect(x:a4width/2*1.1,y:a4height/21*8,width:pageReact.width - 40,height:a4height/21)
         
         let gluvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        gluTitle.draw(in:gluTitleRect,withAttributes:gluTitlerattributes)
         gluvalue.draw(in:gluvalueRect,withAttributes:gluvalueattributes)
     }//addGluvalue
     
     private func addTpValue(tpvalue:String){
-        let tpvalueRect = CGRect(x:rectwidth,y:a4height/21*9,width:pageReact.width - 40,height: 40)
+        
+        let tpTitle = "TP"
+        
+        let tpTitleRect = CGRect(x:a4width/32,y:a4height/21*9,width:rectwidth,height:a4height/21)
+        
+        let tpTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let tpvalueRect = CGRect(x:a4width/2*1.1,y:a4height/21*9,width:pageReact.width - 40,height:a4height/21)
         
         let tpvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        tpTitle.draw(in:tpTitleRect,withAttributes:tpTitlerattributes)
         tpvalue.draw(in:tpvalueRect,withAttributes:tpvalueattributes)
     }//addTpvalue
     
     private func addPhValue(phvalue:String){
-        let phvalueRect = CGRect(x:rectwidth,y:a4height/21*10,width:pageReact.width - 40,height: 40)
+        
+        let phTitle = "pH"
+        
+        let phTitleRect = CGRect(x:a4width/32,y:a4height/21*10,width:rectwidth,height:a4height/21)
+        
+        let phTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let phvalueRect = CGRect(x:a4width/2*1.05,y:a4height/21*10,width:pageReact.width - 40,height:a4height/21)
         
         let phvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        phTitle.draw(in:phTitleRect,withAttributes:phTitlerattributes)
         phvalue.draw(in:phvalueRect,withAttributes:phvalueattributes)
     }//addPhvalue
     
     private func addRbcValue(rbcvalue:String){
-        let rbcvalueRect = CGRect(x:rectwidth,y:a4height/21*11,width:pageReact.width - 40,height: 40)
+        
+        let rbcTitle = "RBC"
+        
+        let rbcTitleRect = CGRect(x:a4width/32,y:a4height/21*11,width:rectwidth,height:a4height/21)
+        
+        let rbcTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let rbcvalueRect = CGRect(x:a4width/2*1.1,y:a4height/21*11,width:pageReact.width - 40,height: a4height/21)
         
         let rbcvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        rbcTitle.draw(in:rbcTitleRect,withAttributes:rbcTitlerattributes)
         rbcvalue.draw(in:rbcvalueRect,withAttributes:rbcvalueattributes)
     }//addRbcvalue
     
     private func addWbcValue(wbcvalue:String){
-        let wbcvalueRect = CGRect(x:rectwidth,y:a4height/21*12,width:pageReact.width - 40,height: 40)
+        
+        let wbcTitle = "WBC"
+        
+        let wbcTitleRect = CGRect(x:a4width/32,y:a4height/21*12,width:rectwidth,height:a4height/21)
+        
+        let wbcTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let wbcvalueRect = CGRect(x:a4width/2*1.1,y:a4height/21*12,width:pageReact.width - 40,height: a4height/21)
         
         let wbcvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        wbcTitle.draw(in:wbcTitleRect,withAttributes:wbcTitlerattributes)
         wbcvalue.draw(in:wbcvalueRect,withAttributes:wbcvalueattributes)
     }//addWbcvalue
     
@@ -199,17 +328,38 @@ extension PDFCreator{
 //    }//addMicrovalue
     
     private func addMicroDetail(microdetail:String){
-        let microdetailRect = CGRect(x:rectwidth,y:a4height/21*13,width:pageReact.width - 40,height: 40)
+        
+        let microTitle = "Micro"
+        
+        let microTitleRect = CGRect(x:a4width/32,y:a4height/21*13,width:rectwidth,height:a4height/21)
+        
+        let microTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let microdetailRect = CGRect(x:a4width/3,y:a4height/21*13,width:pageReact.width - 40,height: a4height/21)
         
         let microdetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        microTitle.draw(in:microTitleRect,withAttributes:microTitlerattributes)
         microdetail.draw(in:microdetailRect,withAttributes:microdetailattributes)
     }//addMicrodetail
     
     private func addMicroComment(microcomment:String){
+        
+        let commentTitle = "Comment"
+        
+        let commentTitleRect = CGRect(x:a4width/64,y:a4height/21*14,width:rectwidth,height:a4height/21)
+        
+        let commentTitleattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 25),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .justified
         
@@ -219,7 +369,9 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let microcommentRect = CGRect(x:rectwidth, y: a4height/21*14, width: pageReact.width - 40, height: 60)
+        let microcommentRect = CGRect(x:rectwidth, y: a4height/21*14, width: pageReact.width - 40, height:a4height/21*1.5)
+        
+        commentTitle.draw(in:commentTitleRect,withAttributes:commentTitleattributes)
         microcomment.draw(in:microcommentRect,withAttributes:attributes)
     }//addMicroComment
     
@@ -235,17 +387,38 @@ extension PDFCreator{
 //    }//addCrystalvalue
     
     private func addCrystalDetail(crystaldetail:String){
-        let crystaldetailRect = CGRect(x:rectwidth,y:a4height/21*15.5,width:pageReact.width - 40,height: 40)
+        
+        let crystalTitle = "Crystals"
+        
+        let crystalTitleRect = CGRect(x:a4width/64,y:a4height/21*15.5,width:rectwidth,height:a4height/21)
+        
+        let crystalTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let crystaldetailRect = CGRect(x:a4width/3,y:a4height/21*15.5,width:pageReact.width - 40,height:a4height/21)
         
         let crystaldetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        crystalTitle.draw(in:crystalTitleRect,withAttributes:crystalTitlerattributes)
         crystaldetail.draw(in:crystaldetailRect,withAttributes:crystaldetailattributes)
     }//addCrystalDetail
     
     private func addCrystalComment(crystalcomment:String){
+        
+        let commentTitle = "Comment"
+        
+        let commentTitleRect = CGRect(x:a4width/64,y:a4height/21*16.5,width:rectwidth,height:a4height/21)
+        
+        let commentTitleattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 25),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .justified
         
@@ -255,7 +428,9 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let crystalcommentRect = CGRect(x:rectwidth, y:a4height/21*16.5, width: pageReact.width - 40, height: 60)
+        let crystalcommentRect = CGRect(x:rectwidth, y:a4height/21*16.5, width: pageReact.width - 40, height:a4height/21*1.5)
+        
+        commentTitle.draw(in:commentTitleRect,withAttributes:commentTitleattributes)
         crystalcomment.draw(in:crystalcommentRect,withAttributes:attributes)
     }//addCrystalComment
     
@@ -271,17 +446,38 @@ extension PDFCreator{
 //    }//addCastValue
     
     private func addCastDetail(castdetail:String){
-        let castdetailRect = CGRect(x:rectwidth,y:a4height/21*18,width:pageReact.width - 40,height: 40)
+        
+        let castTitle = "Cast"
+        
+        let castTitleRect = CGRect(x:a4width/32,y:a4height/21*18,width:rectwidth,height:a4height/21)
+        
+        let castTitlerattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
+        let castdetailRect = CGRect(x:a4width/3,y:a4height/21*18,width:pageReact.width - 40,height: a4height/21)
         
         let castdetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.red
         ]
         
+        castTitle.draw(in:castTitleRect,withAttributes:castTitlerattributes)
         castdetail.draw(in:castdetailRect,withAttributes:castdetailattributes)
     }//addCastDetail
     
     private func addCastComment(castcomment:String){
+        
+        let commentTitle = "Comment"
+        
+        let commentTitleRect = CGRect(x:a4width/64,y:a4height/21*19,width:rectwidth,height:a4height/21)
+        
+        let commentTitleattributes = [
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 25),
+            NSAttributedString.Key.foregroundColor:UIColor.black
+        ]
+        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .justified
         
@@ -291,7 +487,9 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let castcommentRect = CGRect(x:rectwidth, y: a4height/21*19.5, width: pageReact.width - 40, height: 60)
+        let castcommentRect = CGRect(x:rectwidth, y: a4height/21*19, width: pageReact.width - 40, height:a4height/21*1.5)
+        
+        commentTitle.draw(in:commentTitleRect,withAttributes:commentTitleattributes)
         castcomment.draw(in:castcommentRect,withAttributes:attributes)
     }//addMicroComment
     
@@ -405,6 +603,8 @@ extension PDFCreator{
                 addCastComment(castcomment: castcommit)
                 addTitle(title: title)
                 addBody(body: body)
+                
+                addTitleText(title: "Urinary Test")
                 
                 partitionLine(CGRect(x:0, y:0, width:0, height:0))
                 secondpartitionLine(CGRect(x:0, y:0, width: 0, height: 0))

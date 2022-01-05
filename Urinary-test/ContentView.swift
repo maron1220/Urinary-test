@@ -42,7 +42,7 @@ struct ContentView: View {
     ]
     
     let uroarray = [
-        "Normal",
+        "-",
         "+",
         "++",
         "+++"
