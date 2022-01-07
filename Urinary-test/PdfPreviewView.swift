@@ -20,7 +20,7 @@ struct PdfPreviewView:View{
             shareButton()
             Spacer()
         }//VStack
-        .navigationTitle(Text("Your PDF"))
+        .navigationTitle(Text("検査結果"))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showShareSheet,content: {
             if let data = contentViewModel.pdfData(){

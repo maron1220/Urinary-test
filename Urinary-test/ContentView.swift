@@ -7,6 +7,7 @@
 //titleとbodyを入力する画面
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     @EnvironmentObject private var contentViewModel:ContentViewModel
@@ -28,17 +29,16 @@ struct ContentView: View {
     @State private var crystaldetailselection = 0
     @State private var castdetailselection = 0
     
+    private var a4height = 11*72.0
+    private var a4width = 8.5*72.0
     
     let selections = [
-        "'Colorless' or 'Light yellow'",
-        "'Dark yellow' or 'Yellow-orange'",
-        "'Yellow-green' or 'Yellow-brown'",
-        "'Brown' to 'Black'",
-        "'Red' to 'Red-brown'",
-        "'Pink' to 'Brown'",
-        "Orange-red",
-        "Blue-green",
-        "Milky white"
+        "無色",
+        "黄色",
+        "濃黄色",
+        "黒色",
+        "赤褐色",
+        "白色"
     ]
     
     let uroarray = [
@@ -120,29 +120,29 @@ struct ContentView: View {
     ]
     
     let microdetailarray = [
-        "Nothing",
-        "bacteria",
-        "yeast",
-        "fungi"
+        "なし",
+        "球菌",
+        "桿菌",
+        "真菌"
     ]
     
     let crystaldetailarray = [
-        "Nothing",
-        "Struvite crystals",
-        "Calcium oxalate dihydride crystals",
-        "Cystine crystals",
-        "Ammonium biurate or uric acid crystals"
+        "なし",
+        "ストルバイト",
+        "シュウ酸カルシウム",
+        "シスチン",
+        "尿酸アンモニウム"
     ]
     
     let castdetailarray = [
-        "Nothing",
-        "Hyaline casts",
-        "Epithelial cellular casts",
-        "Granular casts",
-        "Waxy casts",
-        "RBC casts",
-        "WBC casts",
-        "Fatty casts"
+        "なし",
+        "硝子様円柱",
+        "上皮細胞円柱",
+        "顆粒円柱",
+        "蝋様円柱",
+        "赤血球円柱",
+        "白血球円柱",
+        "脂肪円柱"
     ]
     
     var body: some View {
@@ -153,38 +153,38 @@ struct ContentView: View {
                     colorspicker()
                     
                     Group{
-                        segmentedpicker(headertext: "Urobilinogen", pickertext: "Uro", pickerarray: uroarray, segmentedselection: $uroselection)
+                        segmentedpicker(headertext: "ウロビリノーゲン", pickertext: "Uro", pickerarray: uroarray, segmentedselection: $uroselection)
                         
-                        segmentedpicker(headertext: "OB", pickertext: "OB", pickerarray: obarray, segmentedselection: $obselection)
+                        segmentedpicker(headertext: "潜血", pickertext: "OB", pickerarray: obarray, segmentedselection: $obselection)
                         
-                        segmentedpicker(headertext: "Bilirubin", pickertext: "Bil", pickerarray: bilarray, segmentedselection: $bilselection)
+                        segmentedpicker(headertext: "ビリルビン", pickertext: "Bil", pickerarray: bilarray, segmentedselection: $bilselection)
                         
-                        segmentedpicker(headertext: "Keton", pickertext: "Keton", pickerarray: ketonarray, segmentedselection: $ketonselection)
+                        segmentedpicker(headertext: "ケトン", pickertext: "Keton", pickerarray: ketonarray, segmentedselection: $ketonselection)
                         
-                        segmentedpicker(headertext: "Glucose", pickertext: "Glu", pickerarray: gluarray, segmentedselection: $gluselection)
+                        segmentedpicker(headertext: "グルコース", pickertext: "Glu", pickerarray: gluarray, segmentedselection: $gluselection)
                         
-                        segmentedpicker(headertext: "TP", pickertext: "TP", pickerarray: tparray, segmentedselection: $tpselection)
+                        segmentedpicker(headertext: "タンパク", pickertext: "TP", pickerarray: tparray, segmentedselection: $tpselection)
                         
                         segmentedpicker(headertext: "pH", pickertext: "pH", pickerarray: pharray, segmentedselection: $phselection)
                     }//Group
                     
                     
                     HStack{
-                        segmentedpicker(headertext: "RBC", pickertext: "RBC", pickerarray: rbcarray, segmentedselection: $rbcselection)
+                        segmentedpicker(headertext: "赤血球", pickertext: "RBC", pickerarray: rbcarray, segmentedselection: $rbcselection)
                         
-                        segmentedpicker(headertext: "WBC", pickertext: "WBC", pickerarray: wbcarray, segmentedselection: $wbcselection)
+                        segmentedpicker(headertext: "白血球", pickertext: "WBC", pickerarray: wbcarray, segmentedselection: $wbcselection)
                     }//HStack
                     
                     Group{
                         //                    segmentedpicker(headertext: "MicroOrganism", pickertext: "Micro", pickerarray: microarray, segmentedselection: $microselection)
-                        secondform(headertext: "MicroOrganism", pickertext: "Micro", pickerarray: microarray, pickerselection: $microselection,secondpickertext:"Detail",secondpickerarray:microdetailarray,secondpickerselection:$microdetailselection,secondtexteditor: $contentViewModel.microcomment)
+                        secondform(headertext: "細菌", pickertext: "Micro", pickerarray: microarray, pickerselection: $microselection,secondpickertext:"詳細",secondpickerarray:microdetailarray,secondpickerselection:$microdetailselection,secondtexteditor: $contentViewModel.microcomment)
                         
                         //                    segmentedpicker(headertext: "UrineCrystals", pickertext: "Crystal", pickerarray: crystalarray, segmentedselection: $crystalselection)
-                        secondform(headertext: "UrineCrystals", pickertext: "Crystal", pickerarray: crystalarray, pickerselection: $crystalselection,secondpickertext:"Detail",secondpickerarray:crystaldetailarray,secondpickerselection:$crystaldetailselection,secondtexteditor: $contentViewModel.crystalcomment)
+                        secondform(headertext: "結晶", pickertext: "Crystal", pickerarray: crystalarray, pickerselection: $crystalselection,secondpickertext:"詳細",secondpickerarray:crystaldetailarray,secondpickerselection:$crystaldetailselection,secondtexteditor: $contentViewModel.crystalcomment)
                         
                         
                         //                    segmentedpicker(headertext: "UrineCasts", pickertext: "Cast", pickerarray: castarray, segmentedselection: $castselection)
-                        secondform(headertext: "UrineCasts", pickertext: "Cast", pickerarray: castarray, pickerselection: $castselection,secondpickertext:"Detail",secondpickerarray:castdetailarray,secondpickerselection:$castdetailselection,secondtexteditor: $contentViewModel.castcomment)
+                        secondform(headertext: "尿道円柱", pickertext: "Cast", pickerarray: castarray, pickerselection: $castselection,secondpickertext:"詳細",secondpickerarray:castdetailarray,secondpickerselection:$castdetailselection,secondtexteditor: $contentViewModel.castcomment)
                         
                     }//Group
                     
@@ -193,7 +193,10 @@ struct ContentView: View {
                 pickerbutton()
                 buttons()
             }//VStack
-            .navigationTitle(Text("Urinary Test"))
+            .navigationTitle(Text("尿検査"))
+            .onTapGesture {
+                UIApplication.shared.closeKeyboard()
+            }
         }//NavigationView
         .environmentObject(contentViewModel)
     }//var body
@@ -210,7 +213,7 @@ extension ContentView{
                 .keyboardType(.decimalPad)
                 .frame(width: 300, height: 50)
         }header: {
-            Text("Urinary Specific Gravity")
+            Text("尿比重")
             //                .foregroundColor(.gray)
         }
     }//private func usgform
@@ -234,12 +237,12 @@ extension ContentView{
             //TextFieldとTextEditerの内容をBinding($)でViewModelに渡す。
             }//Picker
             TextEditor(text: secondtexteditor)
-                .frame(height:100)
+                .frame(height:a4height/21*1.5)
         }//Section
     header:{
         Text(headertext)
     }footer: {
-        Text("comment")
+        Text("コメント")
     }
     }//private func form
 }//extension ContentView
@@ -264,14 +267,14 @@ extension ContentView{
 extension ContentView{
     private func colorspicker() -> some View{
         Section{
-            Picker(selection: $selection,label: Text("Detail")){
+            Picker(selection: $selection,label: Text("詳細")){
                 ForEach(0..<selections.count){index in
                     Text(self.selections[index])
                 }//ForEach
             }//Picker
             .labelsHidden()
         }header: {
-            Text("Urine Color")
+            Text("尿色")
         }
     }//private func colors
 }//extension ContentView
@@ -320,6 +323,12 @@ extension ContentView{
         }
     }//func segmentedpicker
 }//extension ContentView
+
+extension UIApplication{
+    func closeKeyboard(){
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}//UIApplication
 
 
 struct ContentView_Previews: PreviewProvider {
