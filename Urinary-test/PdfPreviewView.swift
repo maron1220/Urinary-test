@@ -14,13 +14,21 @@ struct PdfPreviewView:View{
     
     @State private var showShareSheet:Bool = false
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body:some View{
         VStack{
             PdfViewUI(data:contentViewModel.pdfData())
-            shareButton()
+            HStack{
+                Spacer()
+            closeButton()
+                Spacer()
+                shareButton()
+                    Spacer()
+            }//HStack
             Spacer()
         }//VStack
-        .navigationTitle(Text("Your PDF"))
+        .navigationTitle(Text("検査結果"))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showShareSheet,content: {
             if let data = contentViewModel.pdfData(){
@@ -40,12 +48,24 @@ extension PdfPreviewView{
             self.showShareSheet.toggle()
         },label: {
             Text("Share")
-                .padding(10)
-                .frame(width:100)
+                .font(.title3)
+                .padding(15)
+//                .frame(width:100)
                 .background(Color.blue)
                 .foregroundColor(.white)
-                .cornerRadius(20)
+                .cornerRadius(10)
         }//label
         )//Button
     }//private func shareButton
+}//extension PdfPreviewView
+
+extension PdfPreviewView{
+    private func closeButton() -> some View{
+        Button(action:{
+            self.presentationMode.wrappedValue.dismiss()
+        },label: {
+            Text("閉じる")
+        }//label
+        )//Button
+    }//closeButton
 }//extension PdfPreviewView

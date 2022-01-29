@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D5F47DF2761028F00590DAD /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F47DE2761028F00590DAD /* PDFCreator.swift */; };
+		2D79A1CC27A1896C00FF3047 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D79A1CB27A1896C00FF3047 /* PopUpView.swift */; };
 		2D8CE3D0276A0B3B00B02BB6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CE3CF276A0B3B00B02BB6 /* Model.swift */; };
 		2D8CE3D2276A0B7800B02BB6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CE3D1276A0B7800B02BB6 /* ViewModel.swift */; };
 		2D8CE3D4276A1AB600B02BB6 /* PdfPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CE3D3276A1AB600B02BB6 /* PdfPreviewView.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		2D5F47DE2761028F00590DAD /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		2D79A1CB27A1896C00FF3047 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		2D8CE3CF276A0B3B00B02BB6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		2D8CE3D1276A0B7800B02BB6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2D8CE3D3276A1AB600B02BB6 /* PdfPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfPreviewView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				2DC2D731275FC52C0051824E /* Urinary_testApp.swift */,
 				2DC2D733275FC52C0051824E /* ContentView.swift */,
+				2D79A1CB27A1896C00FF3047 /* PopUpView.swift */,
 				2D8CE3D3276A1AB600B02BB6 /* PdfPreviewView.swift */,
 				2D8CE3D5276A1B1600B02BB6 /* PdfViewUI.swift */,
 				2D8CE3D7276A1E4600B02BB6 /* ShareView.swift */,
@@ -278,6 +281,7 @@
 				2D8CE3D8276A1E4600B02BB6 /* ShareView.swift in Sources */,
 				2D8CE3D2276A0B7800B02BB6 /* ViewModel.swift in Sources */,
 				2DC2D734275FC52C0051824E /* ContentView.swift in Sources */,
+				2D79A1CC27A1896C00FF3047 /* PopUpView.swift in Sources */,
 				2D8CE3D4276A1AB600B02BB6 /* PdfPreviewView.swift in Sources */,
 				2D5F47DF2761028F00590DAD /* PDFCreator.swift in Sources */,
 				2DC2D732275FC52C0051824E /* Urinary_testApp.swift in Sources */,

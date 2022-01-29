@@ -45,7 +45,7 @@ class PDFCreator: NSObject {
 extension PDFCreator{
     
     private func addTitleText(title:String){
-        let titlecolorRect = CGRect(x:rectwidth*1.3,y:5,width:pageReact.width - 40,height:a4height/21*2)
+        let titlecolorRect = CGRect(x:a4width/2*0.8,y:5,width:pageReact.width - 40,height:a4height/21*2)
         
         let titlecolorattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 50),
@@ -59,7 +59,7 @@ extension PDFCreator{
     private func addUsgValue(usgvalue : String){
         
         var usgcolor = UIColor.black
-        var usgTitle = "USG"
+        var usgTitle = "尿比重"
         
         var doubleusg:Double
         if let convertusg = Double(usgvalue){
@@ -98,7 +98,7 @@ extension PDFCreator{
    
     private func addUrineColor(urinecolor:String){
         
-        let urineColorTitle = "Color"
+        let urineColorTitle = "色"
         
         let urinecolorTitleRect = CGRect(x:a4width/32,y:a4height/21*3,width:rectwidth,height:a4height/21)
         
@@ -107,7 +107,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.black
         ]
         
-        let urinecolorRect = CGRect(x:a4width/3,y:a4height/21*3,width:pageReact.width - 40,height:a4height/21)
+        let urinecolorRect = CGRect(x:a4width/2*1.05,y:a4height/21*3,width:pageReact.width - 40,height:a4height/21)
         
         let urinecolorattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -120,12 +120,12 @@ extension PDFCreator{
     
     private func addUroValue(urovalue:String){
         
-        let uroTitle = "Uro"
+        let uroTitle = "ウロビリノーゲン"
         
-        let uroTitleRect = CGRect(x:a4width/32,y:a4height/21*4,width:rectwidth,height:a4height/21)
+        let uroTitleRect = CGRect(x:a4width/64,y:a4height/21*4+3,width:a4width/3,height:a4height/21)
         
         let uroTitlerattributes = [
-            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 25),
             NSAttributedString.Key.foregroundColor:UIColor.black
         ]
         
@@ -142,7 +142,7 @@ extension PDFCreator{
     
     private func addObValue(obvalue:String){
         
-        let obTitle = "OB"
+        let obTitle = "潜血"
         
         let obTitleRect = CGRect(x:a4width/32,y:a4height/21*5,width:rectwidth,height:a4height/21)
         
@@ -164,9 +164,9 @@ extension PDFCreator{
     
     private func addBilValue(bilvalue:String){
         
-        let bilTitle = "Bilirubin"
+        let bilTitle = "ビリルビン"
         
-        let bilTitleRect = CGRect(x:a4width/64,y:a4height/21*6,width:rectwidth,height:a4height/21)
+        let bilTitleRect = CGRect(x:a4width/32,y:a4height/21*6,width:a4width/3,height:a4height/21)
         
         let bilTitlerattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -186,7 +186,7 @@ extension PDFCreator{
     
     private func addKetonValue(ketonvalue:String){
         
-        let ketonTitle = "Keton"
+        let ketonTitle = "ケトン"
         
         let ketonTitleRect = CGRect(x:a4width/32,y:a4height/21*7,width:rectwidth,height:a4height/21)
         
@@ -208,9 +208,9 @@ extension PDFCreator{
     
     private func addGluValue(gluvalue:String){
         
-        let gluTitle = "Glucose"
+        let gluTitle = "グルコース"
         
-        let gluTitleRect = CGRect(x:a4width/64,y:a4height/21*8,width:rectwidth,height:a4height/21)
+        let gluTitleRect = CGRect(x:a4width/32,y:a4height/21*8,width:a4width/3,height:a4height/21)
         
         let gluTitlerattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -230,7 +230,7 @@ extension PDFCreator{
     
     private func addTpValue(tpvalue:String){
         
-        let tpTitle = "TP"
+        let tpTitle = "タンパク"
         
         let tpTitleRect = CGRect(x:a4width/32,y:a4height/21*9,width:rectwidth,height:a4height/21)
         
@@ -274,7 +274,7 @@ extension PDFCreator{
     
     private func addRbcValue(rbcvalue:String){
         
-        let rbcTitle = "RBC"
+        let rbcTitle = "赤血球"
         
         let rbcTitleRect = CGRect(x:a4width/32,y:a4height/21*11,width:rectwidth,height:a4height/21)
         
@@ -296,7 +296,7 @@ extension PDFCreator{
     
     private func addWbcValue(wbcvalue:String){
         
-        let wbcTitle = "WBC"
+        let wbcTitle = "白血球"
         
         let wbcTitleRect = CGRect(x:a4width/32,y:a4height/21*12,width:rectwidth,height:a4height/21)
         
@@ -329,7 +329,7 @@ extension PDFCreator{
     
     private func addMicroDetail(microdetail:String){
         
-        let microTitle = "Micro"
+        let microTitle = "細菌"
         
         let microTitleRect = CGRect(x:a4width/32,y:a4height/21*13,width:rectwidth,height:a4height/21)
         
@@ -338,7 +338,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.black
         ]
         
-        let microdetailRect = CGRect(x:a4width/3,y:a4height/21*13,width:pageReact.width - 40,height: a4height/21)
+        let microdetailRect = CGRect(x:a4width/2*1.05,y:a4height/21*13,width:pageReact.width - 40,height: a4height/21)
         
         let microdetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -351,9 +351,9 @@ extension PDFCreator{
     
     private func addMicroComment(microcomment:String){
         
-        let commentTitle = "Comment"
+        let commentTitle = "コメント"
         
-        let commentTitleRect = CGRect(x:a4width/64,y:a4height/21*14,width:rectwidth,height:a4height/21)
+        let commentTitleRect = CGRect(x:a4width/32,y:a4height/21*14,width:a4width/3,height:a4height/21)
         
         let commentTitleattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 25),
@@ -369,7 +369,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let microcommentRect = CGRect(x:rectwidth, y: a4height/21*14, width: pageReact.width - 40, height:a4height/21*1.5)
+        let microcommentRect = CGRect(x:a4width/3*1.1, y: a4height/21*14, width: a4width/3*1.8, height:a4height/21*1.5)
         
         commentTitle.draw(in:commentTitleRect,withAttributes:commentTitleattributes)
         microcomment.draw(in:microcommentRect,withAttributes:attributes)
@@ -388,16 +388,16 @@ extension PDFCreator{
     
     private func addCrystalDetail(crystaldetail:String){
         
-        let crystalTitle = "Crystals"
+        let crystalTitle = "結晶"
         
-        let crystalTitleRect = CGRect(x:a4width/64,y:a4height/21*15.5,width:rectwidth,height:a4height/21)
+        let crystalTitleRect = CGRect(x:a4width/32,y:a4height/21*15.5,width:rectwidth,height:a4height/21)
         
         let crystalTitlerattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
             NSAttributedString.Key.foregroundColor:UIColor.black
         ]
         
-        let crystaldetailRect = CGRect(x:a4width/3,y:a4height/21*15.5,width:pageReact.width - 40,height:a4height/21)
+        let crystaldetailRect = CGRect(x:a4width/2*1.05,y:a4height/21*15.5,width:pageReact.width - 40,height:a4height/21)
         
         let crystaldetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -410,9 +410,9 @@ extension PDFCreator{
     
     private func addCrystalComment(crystalcomment:String){
         
-        let commentTitle = "Comment"
+        let commentTitle = "コメント"
         
-        let commentTitleRect = CGRect(x:a4width/64,y:a4height/21*16.5,width:rectwidth,height:a4height/21)
+        let commentTitleRect = CGRect(x:a4width/32,y:a4height/21*16.5,width:rectwidth,height:a4height/21)
         
         let commentTitleattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 25),
@@ -428,7 +428,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let crystalcommentRect = CGRect(x:rectwidth, y:a4height/21*16.5, width: pageReact.width - 40, height:a4height/21*1.5)
+        let crystalcommentRect = CGRect(x:a4width/3*1.1, y: a4height/21*16.5, width: pageReact.width - 40, height:a4height/21*1.5)
         
         commentTitle.draw(in:commentTitleRect,withAttributes:commentTitleattributes)
         crystalcomment.draw(in:crystalcommentRect,withAttributes:attributes)
@@ -447,7 +447,7 @@ extension PDFCreator{
     
     private func addCastDetail(castdetail:String){
         
-        let castTitle = "Cast"
+        let castTitle = "尿道円柱"
         
         let castTitleRect = CGRect(x:a4width/32,y:a4height/21*18,width:rectwidth,height:a4height/21)
         
@@ -456,7 +456,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.black
         ]
         
-        let castdetailRect = CGRect(x:a4width/3,y:a4height/21*18,width:pageReact.width - 40,height: a4height/21)
+        let castdetailRect = CGRect(x:a4width/2*1.05,y:a4height/21*18,width:pageReact.width - 40,height: a4height/21)
         
         let castdetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
@@ -469,9 +469,9 @@ extension PDFCreator{
     
     private func addCastComment(castcomment:String){
         
-        let commentTitle = "Comment"
+        let commentTitle = "コメント"
         
-        let commentTitleRect = CGRect(x:a4width/64,y:a4height/21*19,width:rectwidth,height:a4height/21)
+        let commentTitleRect = CGRect(x:a4width/32,y:a4height/21*19,width:rectwidth,height:a4height/21)
         
         let commentTitleattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 25),
@@ -487,7 +487,7 @@ extension PDFCreator{
             NSAttributedString.Key.foregroundColor:UIColor.gray
         ]//attributes
         
-        let castcommentRect = CGRect(x:rectwidth, y: a4height/21*19, width: pageReact.width - 40, height:a4height/21*1.5)
+        let castcommentRect = CGRect(x:a4width/3*1.1, y: a4height/21*19, width: pageReact.width - 40, height:a4height/21*1.5)
         
         commentTitle.draw(in:commentTitleRect,withAttributes:commentTitleattributes)
         castcomment.draw(in:castcommentRect,withAttributes:attributes)
@@ -567,8 +567,8 @@ extension PDFCreator{
     
     private func verticalLine(_ rect:CGRect){
         let path = UIBezierPath()
-        path.move(to:CGPoint(x:rectwidth-20,y:a4height/21*2))
-        path.addLine(to: CGPoint(x:rectwidth-20,y:a4height))
+        path.move(to:CGPoint(x:a4width/3,y:a4height/21*2))
+        path.addLine(to: CGPoint(x:a4width/3,y:a4height))
         path.lineWidth = 2
         UIColor.black.setStroke()
         path.stroke()
@@ -604,7 +604,7 @@ extension PDFCreator{
                 addTitle(title: title)
                 addBody(body: body)
                 
-                addTitleText(title: "Urinary Test")
+                addTitleText(title: "尿検査")
                 
                 partitionLine(CGRect(x:0, y:0, width:0, height:0))
                 secondpartitionLine(CGRect(x:0, y:0, width: 0, height: 0))
