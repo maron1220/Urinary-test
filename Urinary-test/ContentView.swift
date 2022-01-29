@@ -11,6 +11,16 @@ import Combine
 
 struct ContentView: View {
     @EnvironmentObject private var contentViewModel:ContentViewModel
+    
+    @State var keybordopen:Bool = false
+    
+    let screenwidth = Int(UIScreen.main.bounds.width)
+    let screenheight = Int(UIScreen.main.bounds.height)
+    
+    //@State var isPresent:Bool = false
+    
+    @State var showingPopUp = false
+    
     //EnvironmentObject=複数のViewでObservableObjectを使う。
     @State private var selection = 0 //urinecolor's picker
     @State private var uroselection = 0//segmentedpicker
@@ -146,7 +156,12 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        NavigationView{
+      NavigationView{
+//          ZStack{
+//            Color.white
+//                  .onTapGesture {
+//                      UIApplication.shared.closeKeyboard()
+//                  }
             VStack{
                 Form{
                     usgform()
@@ -190,14 +205,32 @@ struct ContentView: View {
                     
                     
                 }//Form
+                
+                ZStack{
+                    HStack{
+                        if keybordopen == false{
                 pickerbutton()
-                buttons()
+                        }
+                        if keybordopen{
+                            keyboardbutton()
+                        }
+//                buttons()
+                    }//HStack
+                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidShowNotification)){_ in
+                        self.keybordopen = true
+                    }.onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidHideNotification)){_ in
+                        self.keybordopen = false
+                    }
+                
+                if showingPopUp{
+                    PopUpView(isPresent: $showingPopUp)
+                }
+                }//ZStack
             }//VStack
             .navigationTitle(Text("尿検査"))
-            .onTapGesture {
-                UIApplication.shared.closeKeyboard()
-            }
+//          }//ZStack
         }//NavigationView
+        
         .environmentObject(contentViewModel)
     }//var body
 }//strunc ContentView
@@ -280,6 +313,17 @@ extension ContentView{
 }//extension ContentView
 
 extension ContentView{
+    private func keyboardbutton() -> some View{
+        Button(action: {
+            UIApplication.shared.closeKeyboard()
+        },
+               label: {
+            Text("キーボードを閉じる")
+        })
+    }
+}
+
+extension ContentView{
     private func pickerbutton() -> some View{
         Button(action:{
             contentViewModel.urinecolor = selections[selection]
@@ -298,6 +342,10 @@ extension ContentView{
             contentViewModel.microdetail = microdetailarray[microdetailselection]
             contentViewModel.crystaldetail = crystaldetailarray[crystaldetailselection]
             contentViewModel.castdetail = castdetailarray[castdetailselection]
+            UIApplication.shared.closeKeyboard()
+            withAnimation{
+                showingPopUp = true
+            }
         }){
             Text("Picker Register")
                 .padding(10)

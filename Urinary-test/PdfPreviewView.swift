@@ -14,10 +14,15 @@ struct PdfPreviewView:View{
     
     @State private var showShareSheet:Bool = false
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body:some View{
         VStack{
             PdfViewUI(data:contentViewModel.pdfData())
+            HStack{
             shareButton()
+            closeButton()
+            }//HStack
             Spacer()
         }//VStack
         .navigationTitle(Text("検査結果"))
@@ -48,4 +53,15 @@ extension PdfPreviewView{
         }//label
         )//Button
     }//private func shareButton
+}//extension PdfPreviewView
+
+extension PdfPreviewView{
+    private func closeButton() -> some View{
+        Button(action:{
+            self.presentationMode.wrappedValue.dismiss()
+        },label: {
+            Text("閉じる")
+        }//label
+        )//Button
+    }//closeButton
 }//extension PdfPreviewView
