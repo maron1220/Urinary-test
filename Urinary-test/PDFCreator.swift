@@ -100,6 +100,12 @@ extension PDFCreator{
         
         let urineColorTitle = "色"
         
+        var urineColorFont:UIColor = UIColor.black
+        
+        if urinecolor != "無色"{
+            urineColorFont = UIColor.red
+        }
+        
         let urinecolorTitleRect = CGRect(x:a4width/32,y:a4height/21*3,width:rectwidth,height:a4height/21)
         
         let urinecoloTitlerattributes = [
@@ -111,7 +117,7 @@ extension PDFCreator{
         
         let urinecolorattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:urineColorFont
         ]
         
         urineColorTitle.draw(in:urinecolorTitleRect,withAttributes:urinecoloTitlerattributes)
@@ -121,6 +127,12 @@ extension PDFCreator{
     private func addUroValue(urovalue:String){
         
         let uroTitle = "ウロビリノーゲン"
+        
+        var uroColor:UIColor = UIColor.black
+        
+        if urovalue != "-"{
+            uroColor = UIColor.red
+        }
         
         let uroTitleRect = CGRect(x:a4width/64,y:a4height/21*4+3,width:a4width/3,height:a4height/21)
         
@@ -133,7 +145,7 @@ extension PDFCreator{
         
         let urovalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:uroColor
         ]
         
         uroTitle.draw(in:uroTitleRect,withAttributes:uroTitlerattributes)
@@ -143,6 +155,12 @@ extension PDFCreator{
     private func addObValue(obvalue:String){
         
         let obTitle = "潜血"
+        
+        var obColor:UIColor = UIColor.black
+        
+        if obvalue != "-"{
+            obColor = UIColor.red
+        }
         
         let obTitleRect = CGRect(x:a4width/32,y:a4height/21*5,width:rectwidth,height:a4height/21)
         
@@ -155,7 +173,7 @@ extension PDFCreator{
         
         let obvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:obColor
         ]
         
         obTitle.draw(in:obTitleRect,withAttributes:obTitlerattributes)
@@ -165,6 +183,12 @@ extension PDFCreator{
     private func addBilValue(bilvalue:String){
         
         let bilTitle = "ビリルビン"
+        
+        var bilColor:UIColor = UIColor.black
+        
+        if bilvalue != "="{
+            bilColor = UIColor.red
+        }
         
         let bilTitleRect = CGRect(x:a4width/32,y:a4height/21*6,width:a4width/3,height:a4height/21)
         
@@ -177,7 +201,7 @@ extension PDFCreator{
         
         let bilvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:bilColor
         ]
         
         bilTitle.draw(in:bilTitleRect,withAttributes:bilTitlerattributes)
@@ -187,6 +211,12 @@ extension PDFCreator{
     private func addKetonValue(ketonvalue:String){
         
         let ketonTitle = "ケトン"
+        
+        var ketonColor:UIColor = UIColor.black
+       
+        if ketonvalue != "-"{
+            ketonColor = UIColor.red
+        }
         
         let ketonTitleRect = CGRect(x:a4width/32,y:a4height/21*7,width:rectwidth,height:a4height/21)
         
@@ -199,7 +229,7 @@ extension PDFCreator{
         
         let ketonvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:ketonColor
         ]
         
         ketonTitle.draw(in:ketonTitleRect,withAttributes:ketonTitlerattributes)
@@ -209,6 +239,12 @@ extension PDFCreator{
     private func addGluValue(gluvalue:String){
         
         let gluTitle = "グルコース"
+        
+        var gluColor:UIColor = UIColor.black
+        
+        if gluvalue != "-"{
+            gluColor = UIColor.red
+        }
         
         let gluTitleRect = CGRect(x:a4width/32,y:a4height/21*8,width:a4width/3,height:a4height/21)
         
@@ -221,7 +257,7 @@ extension PDFCreator{
         
         let gluvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:gluColor
         ]
         
         gluTitle.draw(in:gluTitleRect,withAttributes:gluTitlerattributes)
@@ -231,6 +267,12 @@ extension PDFCreator{
     private func addTpValue(tpvalue:String){
         
         let tpTitle = "タンパク"
+        
+        var tpColor = UIColor.black
+        
+        if tpvalue != "-"{
+            tpColor = UIColor.red
+        }
         
         let tpTitleRect = CGRect(x:a4width/32,y:a4height/21*9,width:rectwidth,height:a4height/21)
         
@@ -243,7 +285,7 @@ extension PDFCreator{
         
         let tpvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:tpColor
         ]
         
         tpTitle.draw(in:tpTitleRect,withAttributes:tpTitlerattributes)
@@ -276,6 +318,12 @@ extension PDFCreator{
         
         let rbcTitle = "赤血球"
         
+        var rbcColor:UIColor = UIColor.black
+        
+        if rbcvalue != "-"{
+            rbcColor = UIColor.red
+        }
+        
         let rbcTitleRect = CGRect(x:a4width/32,y:a4height/21*11,width:rectwidth,height:a4height/21)
         
         let rbcTitlerattributes = [
@@ -287,7 +335,7 @@ extension PDFCreator{
         
         let rbcvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:rbcColor
         ]
         
         rbcTitle.draw(in:rbcTitleRect,withAttributes:rbcTitlerattributes)
@@ -297,6 +345,12 @@ extension PDFCreator{
     private func addWbcValue(wbcvalue:String){
         
         let wbcTitle = "白血球"
+        
+        var wbcColor:UIColor = UIColor.black
+        
+        if wbcvalue != "-"{
+            wbcColor = UIColor.red
+        }
         
         let wbcTitleRect = CGRect(x:a4width/32,y:a4height/21*12,width:rectwidth,height:a4height/21)
         
@@ -309,7 +363,7 @@ extension PDFCreator{
         
         let wbcvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:wbcColor
         ]
         
         wbcTitle.draw(in:wbcTitleRect,withAttributes:wbcTitlerattributes)
@@ -331,6 +385,12 @@ extension PDFCreator{
         
         let microTitle = "細菌"
         
+        var microColor:UIColor = UIColor.black
+        
+        if microdetail != "なし"{
+            microColor = UIColor.red
+        }
+        
         let microTitleRect = CGRect(x:a4width/32,y:a4height/21*13,width:rectwidth,height:a4height/21)
         
         let microTitlerattributes = [
@@ -342,7 +402,7 @@ extension PDFCreator{
         
         let microdetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:microColor
         ]
         
         microTitle.draw(in:microTitleRect,withAttributes:microTitlerattributes)
@@ -390,6 +450,12 @@ extension PDFCreator{
         
         let crystalTitle = "結晶"
         
+        var crystalColor:UIColor = UIColor.black
+        
+        if crystaldetail != "なし"{
+            crystalColor = UIColor.red
+        }
+        
         let crystalTitleRect = CGRect(x:a4width/32,y:a4height/21*15.5,width:rectwidth,height:a4height/21)
         
         let crystalTitlerattributes = [
@@ -401,7 +467,7 @@ extension PDFCreator{
         
         let crystaldetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:crystalColor
         ]
         
         crystalTitle.draw(in:crystalTitleRect,withAttributes:crystalTitlerattributes)
@@ -449,6 +515,12 @@ extension PDFCreator{
         
         let castTitle = "尿道円柱"
         
+        var castColor:UIColor = UIColor.black
+        
+        if castdetail != "なし"{
+            castColor = UIColor.red
+        }
+        
         let castTitleRect = CGRect(x:a4width/32,y:a4height/21*18,width:rectwidth,height:a4height/21)
         
         let castTitlerattributes = [
@@ -460,7 +532,7 @@ extension PDFCreator{
         
         let castdetailattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:castColor
         ]
         
         castTitle.draw(in:castTitleRect,withAttributes:castTitlerattributes)
