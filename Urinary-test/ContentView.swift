@@ -226,7 +226,7 @@ struct ContentView: View {
                 if showingPopUp{
                     PopUpView(isPresent: $showingPopUp)
                 }
-                }//ZStack
+               }//ZStack
             }//VStack
             .navigationTitle(Text("尿検査"))
 //          }//ZStack

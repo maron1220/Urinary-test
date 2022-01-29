@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PopUpView: View {
     @EnvironmentObject private var contentViewModel:ContentViewModel
+    @Environment(\.colorScheme) var colorSheme
     @Binding var isPresent:Bool
     @State private var show:Bool = false
     let screenwidth = UIScreen.main.bounds.width
@@ -73,7 +74,7 @@ struct PopUpView: View {
         }//VStack
         .frame(width: screenwidth*0.7 , height:screenheight*0.9,alignment: .center)
         .padding()
-        .background(Color.white)
+        .background(colorSheme == .dark ? .black : .white)
         .cornerRadius(12)
     }
 }
