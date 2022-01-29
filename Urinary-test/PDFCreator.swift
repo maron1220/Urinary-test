@@ -296,6 +296,18 @@ extension PDFCreator{
         
         let phTitle = "pH"
         
+        var phDouble:Double = Double(phvalue) ?? 0
+        
+        var phColor:UIColor = UIColor.black
+        
+        if phDouble < 6.0{
+            phColor = UIColor.blue
+        }else if phDouble > 7.5{
+            phColor = UIColor.red
+        }else{
+            phColor = UIColor.black
+        }
+        
         let phTitleRect = CGRect(x:a4width/32,y:a4height/21*10,width:rectwidth,height:a4height/21)
         
         let phTitlerattributes = [
@@ -307,7 +319,7 @@ extension PDFCreator{
         
         let phvalueattributes = [
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedString.Key.foregroundColor:UIColor.red
+            NSAttributedString.Key.foregroundColor:phColor
         ]
         
         phTitle.draw(in:phTitleRect,withAttributes:phTitlerattributes)
@@ -646,6 +658,26 @@ extension PDFCreator{
         path.stroke()
     }//verticalLine
     
+    private func secondVerticalLine(_ rect:CGRect){
+        let path = UIBezierPath()
+        path.move(to:CGPoint(x:a4width*4/5,y:a4height/21*2))
+        path.addLine(to: CGPoint(x:a4width*4/5,y:a4height/21*14))
+        path.lineWidth = 2
+        UIColor.black.setStroke()
+        path.stroke()
+    }//verticalLine
+    
+    private func thirdVerticalLine(_ rect:CGRect){
+        let path = UIBezierPath()
+        for i in 1 ... 2{
+        path.move(to:CGPoint(x:a4width*4/5,y:a4height/21*(14+2.5*Double(i))-a4height/21))
+        path.addLine(to: CGPoint(x:a4width*4/5,y:a4height/21*(14+2.5*Double(i))))
+        path.lineWidth = 2
+        UIColor.black.setStroke()
+        path.stroke()
+        }//for
+    }//verticalLine
+    
 }//extension PDFCreator
 
 extension PDFCreator{
@@ -682,6 +714,8 @@ extension PDFCreator{
                 secondpartitionLine(CGRect(x:0, y:0, width: 0, height: 0))
                 thirdpartitionLine(CGRect(x:0, y:0, width:0, height:0))
                 verticalLine(CGRect(x:0, y:0, width:0, height:0))
+                secondVerticalLine(CGRect(x:0, y:0, width:0, height:0))
+                thirdVerticalLine(CGRect(x:0, y:0, width:0, height:0))
                 draw(CGRect(x:0, y:0, width: 0, height:0))
             }
             return data
