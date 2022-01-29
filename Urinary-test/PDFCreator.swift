@@ -186,7 +186,7 @@ extension PDFCreator{
         
         var bilColor:UIColor = UIColor.black
         
-        if bilvalue != "="{
+        if bilvalue != "-"{
             bilColor = UIColor.red
         }
         
