@@ -20,8 +20,11 @@ struct PdfPreviewView:View{
         VStack{
             PdfViewUI(data:contentViewModel.pdfData())
             HStack{
-            shareButton()
+                Spacer()
             closeButton()
+                Spacer()
+                shareButton()
+                    Spacer()
             }//HStack
             Spacer()
         }//VStack
@@ -45,11 +48,12 @@ extension PdfPreviewView{
             self.showShareSheet.toggle()
         },label: {
             Text("Share")
-                .padding(10)
-                .frame(width:100)
+                .font(.title3)
+                .padding(15)
+//                .frame(width:100)
                 .background(Color.blue)
                 .foregroundColor(.white)
-                .cornerRadius(20)
+                .cornerRadius(10)
         }//label
         )//Button
     }//private func shareButton

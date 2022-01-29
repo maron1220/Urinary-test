@@ -58,6 +58,11 @@ struct PopUpView: View {
                     self.show = true
                 }, label: {
                     Text("次のページへ")
+                        .font(.title3)
+                        .padding(15)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 })//Button
                     .sheet(isPresented: self.$show){
                         PdfPreviewView()

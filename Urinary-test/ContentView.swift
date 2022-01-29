@@ -212,6 +212,7 @@ struct ContentView: View {
                 pickerbutton()
                         }
                         if keybordopen{
+                            
                             keyboardbutton()
                         }
 //                buttons()
@@ -318,7 +319,12 @@ extension ContentView{
             UIApplication.shared.closeKeyboard()
         },
                label: {
-            Text("キーボードを閉じる")
+            Image(systemName: "arrow.down.to.line")
+            .symbolRenderingMode(.monochrome)
+            .foregroundColor(Color.accentColor)
+            .font(.system(size: 40, weight: .heavy))
+            
+//            Text("キーボードを閉じる")
         })
     }
 }
@@ -347,12 +353,17 @@ extension ContentView{
                 showingPopUp = true
             }
         }){
-            Text("Picker Register")
-                .padding(10)
-                .frame(width:100)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(20)
+            Image(systemName: "plus.square.fill")
+            .symbolRenderingMode(.monochrome)
+            .foregroundColor(Color.accentColor)
+                                    .font(.system(size: 70, weight: .heavy))
+                                    
+//            Text("Picker Register")
+//                .padding(10)
+//                .frame(width:100)
+//                .background(Color.blue)
+//                .foregroundColor(.white)
+//                .cornerRadius(20)
         }//Button
     }//func pickerbutton
 }//extension ContentView
